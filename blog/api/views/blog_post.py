@@ -2,6 +2,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.filters import SearchFilter
 from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
 
 from blog.api.filters import BlogPostFilter
 from blog.api.serializers import BlogPostSerializer
@@ -22,3 +23,11 @@ class BlogPostViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.order_by("-date", "-created_at")
+
+    def get_serializer(self, *args, **kwargs):
+        # Exclude detailed fields on list view
+        if self.action == "list":
+            kwargs.setdefault("exclude", []).extend(
+                ["tags", "content_blocks", "related_posts"]
+            )
+        return super().get_serializer(*args, **kwargs)
