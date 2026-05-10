@@ -26,6 +26,17 @@ from service.api.serializers import (
     ServiceCTASerializer,
 )
 
+from blog.models import (
+    BlogPost,
+    BlogCTA,
+    BlogSection,
+)
+from blog.api.serializers import (
+    BlogSectionSerializer,
+    BlogPostSerializer,
+    BlogCTASerializer,
+)
+
 
 class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
@@ -43,6 +54,11 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
         team_section = TeamSection.active_objects.first()
         team_members = TeamMember.active_objects.all()
         team_cta = TeamCTA.active_objects.filter(is_team_section=True).first()
+        
+        # Blog Section
+        blog_section = BlogSection.active_objects.first()
+        blog_posts = BlogPost.active_objects.all()[:6]
+        blog_cta = BlogCTA.active_objects.filter(is_blog_section=True).first()
 
         return Response({
             'hero_section': HeroSectionSerializer(hero_section).data if hero_section else None,
@@ -55,5 +71,10 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
                 'section': TeamSectionSerializer(team_section).data if team_section else None,
                 'team_members': TeamMemberSerializer(team_members, many=True).data,
                 'cta': TeamCTASerializer(team_cta).data if team_cta else None,
+            },
+            'blog_section': {
+                'section': BlogSectionSerializer(blog_section).data if blog_section else None,
+                'blog_posts': BlogPostSerializer(blog_posts, many=True).data,
+                'cta': BlogCTASerializer(blog_cta).data if blog_cta else None,
             },
         })

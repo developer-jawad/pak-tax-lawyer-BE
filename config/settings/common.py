@@ -44,6 +44,7 @@ LOCAL_APPS = [
     "email_logs",
     "home",
     "service",
+    "blog",
 ]
 
 THIRD_PARTY_APPS = [
@@ -56,6 +57,7 @@ THIRD_PARTY_APPS = [
     "dj_rest_auth",
     "dj_rest_auth.registration",
     "django_rq",
+    "django_filters",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -145,6 +147,7 @@ REST_FRAMEWORK = {
             "old_password",
         ),
     },
+    "SEARCH_PARAM": "q",
 }
 
 AUTH_USER_MODEL = "users.User"
