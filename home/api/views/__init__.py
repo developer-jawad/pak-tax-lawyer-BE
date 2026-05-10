@@ -1,13 +1,13 @@
 from .hero_section import HeroSectionViewSet
+from .home_sections import HomeSectionsViewSet
+from .team_cta import TeamCTAViewSet
 from .team_member import TeamMemberViewSet
 from .team_section import TeamSectionViewSet
-from .team_cta import TeamCTAViewSet
-from .home_sections import HomeSectionsViewSet
 
 __all__ = [
-    'HeroSectionViewSet',
-    'TeamMemberViewSet',
-    'TeamSectionViewSet',
-    'TeamCTAViewSet',
-    'HomeSectionsViewSet',
+    "HeroSectionViewSet",
+    "TeamMemberViewSet",
+    "TeamSectionViewSet",
+    "TeamCTAViewSet",
+    "HomeSectionsViewSet",
 ]

@@ -11,13 +11,13 @@ from service.api.views import (
 )
 
 router = DefaultRouter()
-router.register(r'hero', ServiceHeroViewSet, basename='service-hero')
-router.register(r'statistics', ServiceStatisticViewSet, basename='service-statistic')
-router.register(r'benefits', ServiceBenefitViewSet, basename='service-benefit')
-router.register(r'services', ServiceViewSet, basename='service')
-router.register(r'service-sections', ServiceSectionViewSet, basename='service-section')
-router.register(r'cta', ServiceCTAViewSet, basename='service-cta')
+router.register(r"hero", ServiceHeroViewSet, basename="service-hero")
+router.register(r"statistics", ServiceStatisticViewSet, basename="service-statistic")
+router.register(r"benefits", ServiceBenefitViewSet, basename="service-benefit")
+router.register(r"services", ServiceViewSet, basename="service")
+router.register(r"service-sections", ServiceSectionViewSet, basename="service-section")
+router.register(r"cta", ServiceCTAViewSet, basename="service-cta")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]

@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
-from service.models import ServiceBenefit
 from service.api.serializers import ServiceBenefitSerializer
+from service.models import ServiceBenefit
 
 
 class ServiceBenefitViewSet(viewsets.ReadOnlyModelViewSet):

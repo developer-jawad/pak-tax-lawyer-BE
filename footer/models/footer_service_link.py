@@ -1,6 +1,7 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class FooterServiceLink(BaseModel):
@@ -13,7 +14,7 @@ class FooterServiceLink(BaseModel):
     class Meta:
         verbose_name = "Footer Service Link"
         verbose_name_plural = "Footer Service Links"
-        ordering = ['id']
+        ordering = ["id"]
 
     def __str__(self):
         return self.label

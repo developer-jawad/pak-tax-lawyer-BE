@@ -1,13 +1,20 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class TeamSection(BaseModel):
-    subtitle = models.CharField(max_length=255, help_text="Subtitle for the team section")
-    title = models.CharField(max_length=255, help_text="Main title for the team section")
+    subtitle = models.CharField(
+        max_length=255, help_text="Subtitle for the team section"
+    )
+    title = models.CharField(
+        max_length=255, help_text="Main title for the team section"
+    )
     description = models.TextField(help_text="Description of the team section")
-    credentials_label = models.CharField(max_length=100, default="Credentials:", help_text="Label for credentials field")
+    credentials_label = models.CharField(
+        max_length=100, default="Credentials:", help_text="Label for credentials field"
+    )
 
     objects = models.Manager()
     active_objects = ActiveObjectsManager()

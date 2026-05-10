@@ -1,6 +1,7 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class AboutCTA(BaseModel):

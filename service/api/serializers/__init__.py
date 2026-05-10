@@ -6,10 +6,10 @@ from .service_section import ServiceSectionSerializer
 from .service_statistic import ServiceStatisticSerializer
 
 __all__ = [
-    'ServiceSerializer',
-    'ServiceBenefitSerializer',
-    'ServiceCTASerializer',
-    'ServiceHeroSerializer',
-    'ServiceSectionSerializer',
-    'ServiceStatisticSerializer',
+    "ServiceSerializer",
+    "ServiceBenefitSerializer",
+    "ServiceCTASerializer",
+    "ServiceHeroSerializer",
+    "ServiceSectionSerializer",
+    "ServiceStatisticSerializer",
 ]

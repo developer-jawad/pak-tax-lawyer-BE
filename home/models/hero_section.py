@@ -12,25 +12,25 @@ class HeroSection(BaseModel):
     button_link = models.CharField(max_length=500, validators=[URLValidator()])
     background_gradient = models.CharField(
         max_length=500,
-        help_text="CSS gradient string (e.g., 'linear-gradient(135deg, #000000 0%, #333333 100%)')"
+        help_text="CSS gradient string (e.g., 'linear-gradient(135deg, #000000 0%, #333333 100%)')",
     )
     background_image_url = models.URLField(
         max_length=1000,
         blank=True,
         null=True,
-        help_text="External URL for background image"
+        help_text="External URL for background image",
     )
     background_image = models.ImageField(
-        upload_to='hero_sections/',
+        upload_to="hero_sections/",
         blank=True,
         null=True,
-        help_text="Upload background image (optional if using external URL)"
+        help_text="Upload background image (optional if using external URL)",
     )
 
     class Meta:
         verbose_name = "Hero Section"
         verbose_name_plural = "Hero Sections"
-        ordering = ['-created_at']
+        ordering = ["-created_at"]
 
     def __str__(self):
         return self.title

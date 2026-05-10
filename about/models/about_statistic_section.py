@@ -1,10 +1,13 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class AboutStatisticSection(BaseModel):
-    title = models.CharField(max_length=255, help_text="Title for the statistics section")
+    title = models.CharField(
+        max_length=255, help_text="Title for the statistics section"
+    )
 
     objects = models.Manager()
     active_objects = ActiveObjectsManager()

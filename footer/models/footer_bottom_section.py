@@ -1,10 +1,13 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class FooterBottomSection(BaseModel):
-    copyright = models.TextField(help_text="Copyright text (use {year} placeholder for year)")
+    copyright = models.TextField(
+        help_text="Copyright text (use {year} placeholder for year)"
+    )
 
     objects = models.Manager()
     active_objects = ActiveObjectsManager()

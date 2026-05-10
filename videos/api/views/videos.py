@@ -2,18 +2,13 @@ from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
-from videos.models import (
-    VideoHero,
-    VideoStatistic,
-    Video,
-    VideoCTA,
-)
 from videos.api.serializers import (
-    VideoHeroSerializer,
-    VideoStatisticSerializer,
-    VideoSerializer,
     VideoCTASerializer,
+    VideoHeroSerializer,
+    VideoSerializer,
+    VideoStatisticSerializer,
 )
+from videos.models import Video, VideoCTA, VideoHero, VideoStatistic
 
 
 class VideosViewSet(viewsets.ReadOnlyModelViewSet):
@@ -27,11 +22,15 @@ class VideosViewSet(viewsets.ReadOnlyModelViewSet):
         videos = Video.active_objects.all()
         cta = VideoCTA.active_objects.first()
 
-        return Response({
-            'hero': {
-                'hero': VideoHeroSerializer(hero).data if hero else None,
-                'statistics': VideoStatisticSerializer(hero_statistics, many=True).data,
-            },
-            'videos': VideoSerializer(videos, many=True).data,
-            'cta': VideoCTASerializer(cta).data if cta else None,
-        })
+        return Response(
+            {
+                "hero": {
+                    "hero": VideoHeroSerializer(hero).data if hero else None,
+                    "statistics": VideoStatisticSerializer(
+                        hero_statistics, many=True
+                    ).data,
+                },
+                "videos": VideoSerializer(videos, many=True).data,
+                "cta": VideoCTASerializer(cta).data if cta else None,
+            }
+        )

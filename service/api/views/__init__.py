@@ -6,10 +6,10 @@ from .service_section import ServiceSectionViewSet
 from .service_statistic import ServiceStatisticViewSet
 
 __all__ = [
-    'ServiceViewSet',
-    'ServiceBenefitViewSet',
-    'ServiceCTAViewSet',
-    'ServiceHeroViewSet',
-    'ServiceSectionViewSet',
-    'ServiceStatisticViewSet',
+    "ServiceViewSet",
+    "ServiceBenefitViewSet",
+    "ServiceCTAViewSet",
+    "ServiceHeroViewSet",
+    "ServiceSectionViewSet",
+    "ServiceStatisticViewSet",
 ]

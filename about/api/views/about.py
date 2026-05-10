@@ -2,25 +2,25 @@ from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
-from about.models import (
-    AboutHero,
-    WhoWeAre,
-    AboutStatistic,
-    AboutStatisticSection,
-    AboutStatisticItem,
-    AboutValue,
-    AboutAchievement,
-    AboutCTA,
-)
 from about.api.serializers import (
-    AboutHeroSerializer,
-    WhoWeAreSerializer,
-    AboutStatisticSerializer,
-    AboutStatisticSectionSerializer,
-    AboutStatisticItemSerializer,
-    AboutValueSerializer,
     AboutAchievementSerializer,
     AboutCTASerializer,
+    AboutHeroSerializer,
+    AboutStatisticItemSerializer,
+    AboutStatisticSectionSerializer,
+    AboutStatisticSerializer,
+    AboutValueSerializer,
+    WhoWeAreSerializer,
+)
+from about.models import (
+    AboutAchievement,
+    AboutCTA,
+    AboutHero,
+    AboutStatistic,
+    AboutStatisticItem,
+    AboutStatisticSection,
+    AboutValue,
+    WhoWeAre,
 )
 
 
@@ -39,17 +39,31 @@ class AboutViewSet(viewsets.ReadOnlyModelViewSet):
         achievements = AboutAchievement.active_objects.all()
         cta = AboutCTA.active_objects.first()
 
-        return Response({
-            'hero': {
-                'hero': AboutHeroSerializer(hero).data if hero else None,
-                'statistics': AboutStatisticSerializer(hero_statistics, many=True).data,
-            },
-            'who_we_are': WhoWeAreSerializer(who_we_are).data if who_we_are else None,
-            'statistics': {
-                'section': AboutStatisticSectionSerializer(statistic_section).data if statistic_section else None,
-                'items': AboutStatisticItemSerializer(statistic_items, many=True).data,
-            },
-            'values': AboutValueSerializer(values, many=True).data,
-            'achievements': AboutAchievementSerializer(achievements, many=True).data,
-            'cta': AboutCTASerializer(cta).data if cta else None,
-        })
+        return Response(
+            {
+                "hero": {
+                    "hero": AboutHeroSerializer(hero).data if hero else None,
+                    "statistics": AboutStatisticSerializer(
+                        hero_statistics, many=True
+                    ).data,
+                },
+                "who_we_are": (
+                    WhoWeAreSerializer(who_we_are).data if who_we_are else None
+                ),
+                "statistics": {
+                    "section": (
+                        AboutStatisticSectionSerializer(statistic_section).data
+                        if statistic_section
+                        else None
+                    ),
+                    "items": AboutStatisticItemSerializer(
+                        statistic_items, many=True
+                    ).data,
+                },
+                "values": AboutValueSerializer(values, many=True).data,
+                "achievements": AboutAchievementSerializer(
+                    achievements, many=True
+                ).data,
+                "cta": AboutCTASerializer(cta).data if cta else None,
+            }
+        )

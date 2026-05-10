@@ -2,23 +2,23 @@ from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
-from footer.models import (
-    FooterBrand,
-    FooterSocialLink,
-    FooterQuickLink,
-    FooterServiceLink,
-    FooterContact,
-    FooterBottomSection,
-    FooterLegalLink,
-)
 from footer.api.serializers import (
+    FooterBottomSectionSerializer,
     FooterBrandSerializer,
-    FooterSocialLinkSerializer,
+    FooterContactSerializer,
+    FooterLegalLinkSerializer,
     FooterQuickLinkSerializer,
     FooterServiceLinkSerializer,
-    FooterContactSerializer,
-    FooterBottomSectionSerializer,
-    FooterLegalLinkSerializer,
+    FooterSocialLinkSerializer,
+)
+from footer.models import (
+    FooterBottomSection,
+    FooterBrand,
+    FooterContact,
+    FooterLegalLink,
+    FooterQuickLink,
+    FooterServiceLink,
+    FooterSocialLink,
 )
 
 
@@ -36,20 +36,30 @@ class FooterViewSet(viewsets.ReadOnlyModelViewSet):
         bottom_section = FooterBottomSection.active_objects.first()
         legal_links = FooterLegalLink.active_objects.all()
 
-        return Response({
-            'brand': FooterBrandSerializer(brand).data if brand else None,
-            'social_links': FooterSocialLinkSerializer(social_links, many=True).data,
-            'quick_links': {
-                'title': 'Quick Links',
-                'links': FooterQuickLinkSerializer(quick_links, many=True).data,
-            },
-            'services': {
-                'title': 'Our Services',
-                'links': FooterServiceLinkSerializer(service_links, many=True).data,
-            },
-            'contact': FooterContactSerializer(contact).data if contact else None,
-            'bottom_section': {
-                'copyright': FooterBottomSectionSerializer(bottom_section).data if bottom_section else None,
-                'legal_links': FooterLegalLinkSerializer(legal_links, many=True).data,
-            },
-        })
+        return Response(
+            {
+                "brand": FooterBrandSerializer(brand).data if brand else None,
+                "social_links": FooterSocialLinkSerializer(
+                    social_links, many=True
+                ).data,
+                "quick_links": {
+                    "title": "Quick Links",
+                    "links": FooterQuickLinkSerializer(quick_links, many=True).data,
+                },
+                "services": {
+                    "title": "Our Services",
+                    "links": FooterServiceLinkSerializer(service_links, many=True).data,
+                },
+                "contact": FooterContactSerializer(contact).data if contact else None,
+                "bottom_section": {
+                    "copyright": (
+                        FooterBottomSectionSerializer(bottom_section).data
+                        if bottom_section
+                        else None
+                    ),
+                    "legal_links": FooterLegalLinkSerializer(
+                        legal_links, many=True
+                    ).data,
+                },
+            }
+        )

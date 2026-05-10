@@ -1,11 +1,16 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class VideoHero(BaseModel):
-    title = models.CharField(max_length=255, help_text="Title for the video hero section")
-    subtitle = models.CharField(max_length=255, help_text="Subtitle for the video hero section")
+    title = models.CharField(
+        max_length=255, help_text="Title for the video hero section"
+    )
+    subtitle = models.CharField(
+        max_length=255, help_text="Subtitle for the video hero section"
+    )
     description = models.TextField(help_text="Description of the video hero section")
 
     objects = models.Manager()

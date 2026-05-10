@@ -6,10 +6,10 @@ from .service_section import ServiceSection
 from .service_statistic import ServiceStatistic
 
 __all__ = [
-    'Service',
-    'ServiceBenefit',
-    'ServiceCTA',
-    'ServiceHero',
-    'ServiceSection',
-    'ServiceStatistic',
+    "Service",
+    "ServiceBenefit",
+    "ServiceCTA",
+    "ServiceHero",
+    "ServiceSection",
+    "ServiceStatistic",
 ]

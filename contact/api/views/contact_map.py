@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
-from contact.models import ContactMap
 from contact.api.serializers import ContactMapSerializer
+from contact.models import ContactMap
 
 
 class ContactMapViewSet(viewsets.ReadOnlyModelViewSet):

@@ -10,12 +10,12 @@ BLOG_CATEGORIES = namedtuple(
 )._make(range(8))
 
 BLOG_CATEGORY_CHOICES = [
-    (BLOG_CATEGORIES.all, 'All'),
-    (BLOG_CATEGORIES.tax_filing, 'Tax Filing'),
-    (BLOG_CATEGORIES.business_tax, 'Business Tax'),
-    (BLOG_CATEGORIES.tax_planning, 'Tax Planning'),
-    (BLOG_CATEGORIES.sales_tax, 'Sales Tax'),
-    (BLOG_CATEGORIES.nrp_tax, 'NRP Tax'),
-    (BLOG_CATEGORIES.corporate_tax, 'Corporate Tax'),
-    (BLOG_CATEGORIES.property_tax, 'Property Tax'),
+    (BLOG_CATEGORIES.all, "All"),
+    (BLOG_CATEGORIES.tax_filing, "Tax Filing"),
+    (BLOG_CATEGORIES.business_tax, "Business Tax"),
+    (BLOG_CATEGORIES.tax_planning, "Tax Planning"),
+    (BLOG_CATEGORIES.sales_tax, "Sales Tax"),
+    (BLOG_CATEGORIES.nrp_tax, "NRP Tax"),
+    (BLOG_CATEGORIES.corporate_tax, "Corporate Tax"),
+    (BLOG_CATEGORIES.property_tax, "Property Tax"),
 ]

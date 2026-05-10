@@ -1,10 +1,13 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class FooterSocialLink(BaseModel):
-    platform = models.CharField(max_length=255, help_text="Platform name (e.g., Facebook, Instagram)")
+    platform = models.CharField(
+        max_length=255, help_text="Platform name (e.g., Facebook, Instagram)"
+    )
     url = models.URLField(max_length=1000, help_text="Platform URL")
 
     objects = models.Manager()
@@ -13,7 +16,7 @@ class FooterSocialLink(BaseModel):
     class Meta:
         verbose_name = "Footer Social Link"
         verbose_name_plural = "Footer Social Links"
-        ordering = ['id']
+        ordering = ["id"]
 
     def __str__(self):
         return f"{self.platform}"

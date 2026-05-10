@@ -1,11 +1,16 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class ContactHero(BaseModel):
-    title = models.CharField(max_length=255, help_text="Title for the contact hero section")
-    subtitle = models.CharField(max_length=255, help_text="Subtitle for the contact hero section")
+    title = models.CharField(
+        max_length=255, help_text="Title for the contact hero section"
+    )
+    subtitle = models.CharField(
+        max_length=255, help_text="Subtitle for the contact hero section"
+    )
     description = models.TextField(help_text="Description of the contact hero section")
 
     objects = models.Manager()

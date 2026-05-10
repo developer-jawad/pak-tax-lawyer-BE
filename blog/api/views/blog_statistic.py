@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
-from blog.models import BlogStatistic
 from blog.api.serializers import BlogStatisticSerializer
+from blog.models import BlogStatistic
 
 
 class BlogStatisticViewSet(viewsets.ReadOnlyModelViewSet):

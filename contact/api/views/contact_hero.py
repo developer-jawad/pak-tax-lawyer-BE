@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
-from contact.models import ContactHero
 from contact.api.serializers import ContactHeroSerializer
+from contact.models import ContactHero
 
 
 class ContactHeroViewSet(viewsets.ReadOnlyModelViewSet):

@@ -1,11 +1,16 @@
 from django.db import models
-from common.models import BaseModel
+
 from common.managers import ActiveObjectsManager
+from common.models import BaseModel
 
 
 class TestimonialSection(BaseModel):
-    subtitle = models.CharField(max_length=255, help_text="Subtitle for the testimonial section")
-    title = models.CharField(max_length=255, help_text="Main title for the testimonial section")
+    subtitle = models.CharField(
+        max_length=255, help_text="Subtitle for the testimonial section"
+    )
+    title = models.CharField(
+        max_length=255, help_text="Main title for the testimonial section"
+    )
     description = models.TextField(help_text="Description of the testimonial section")
 
     objects = models.Manager()
