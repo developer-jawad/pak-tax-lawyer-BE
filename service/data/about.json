@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "title": "Leading Tax Consultants",
+    "subtitle": "in Pakistan",
+    "description": "Your trusted partner in navigating Pakistani tax laws and FBR compliance. Delivering expert solutions with integrity and professionalism.",
+    "statistics": [
+      {
+        "icon": "TrendingUp",
+        "value": "10+",
+        "label": "Years Experience"
+      },
+      {
+        "icon": "Groups",
+        "value": "500+",
+        "label": "Happy Clients"
+      },
+      {
+        "icon": "Verified",
+        "value": "100%",
+        "label": "Success Rate"
+      },
+      {
+        "icon": "Gavel",
+        "value": "1000+",
+        "label": "Cases Handled"
+      }
+    ]
+  },
+  "whoWeAre": {
+    "subtitle": "WHO WE ARE",
+    "title": "Leading Tax Consultants in Pakistan",
+    "paragraphs": [
+      "Pakistan Tax Lawyer is a premier tax consultation firm specializing in Pakistani tax law and Federal Board of Revenue (FBR) compliance. With over a decade of experience, we have established ourselves as trusted advisors to individuals, businesses, and corporations across Pakistan.",
+      "Our team of highly qualified tax professionals brings deep expertise in tax planning, compliance, litigation, and advisory services. We are committed to helping our clients navigate the complex landscape of Pakistani tax laws while ensuring full compliance with FBR regulations.",
+      "Whether you're an individual taxpayer, a startup, or a large corporation, we provide tailored solutions that optimize your tax position while maintaining the highest standards of integrity and professionalism."
+    ],
+    "imageOverlay": {
+      "title": "Professional Excellence",
+      "description": "Delivering expert tax solutions since 2014"
+    }
+  },
+  "statistics": {
+    "title": "Our Impact in Numbers",
+    "stats": [
+      {
+        "icon": "People",
+        "value": "500+",
+        "label": "Happy Clients",
+        "color": "#EE1C27"
+      },
+      {
+        "icon": "TrendingUp",
+        "value": "10+",
+        "label": "Years Experience",
+        "color": "#EE1C27"
+      },
+      {
+        "icon": "Verified",
+        "value": "100%",
+        "label": "Success Rate",
+        "color": "#EE1C27"
+      },
+      {
+        "icon": "Gavel",
+        "value": "1000+",
+        "label": "Cases Handled",
+        "color": "#EE1C27"
+      }
+    ]
+  },
+  "values": {
+    "title": "Our Core Values",
+    "description": "The principles that guide our work and define our commitment to excellence",
+    "values": [
+      {
+        "icon": "Verified",
+        "title": "Integrity",
+        "description": "We uphold the highest standards of integrity in all our actions and maintain transparency with our clients."
+      },
+      {
+        "icon": "WorkspacePremium",
+        "title": "Excellence",
+        "description": "We strive for excellence in every service we provide, ensuring the best outcomes for our clients."
+      },
+      {
+        "icon": "People",
+        "title": "Client-Focused",
+        "description": "Our clients are at the heart of everything we do. We prioritize their needs and work tirelessly for their success."
+      },
+      {
+        "icon": "School",
+        "title": "Expertise",
+        "description": "Our team comprises highly qualified tax professionals with deep knowledge of Pakistani tax laws and FBR regulations."
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Our Achievements",
+    "description": "Recognition and certifications that demonstrate our commitment to excellence",
+    "achievements": [
+      {
+        "icon": "EmojiEvents",
+        "title": "FBR Certified Consultants",
+        "description": "Officially recognized by the Federal Board of Revenue"
+      },
+      {
+        "icon": "WorkspacePremium",
+        "title": "Award-Winning Service",
+        "description": "Recognized for excellence in tax consultation services"
+      },
+      {
+        "icon": "Verified",
+        "title": "100% Compliance Record",
+        "description": "Perfect track record with FBR compliance"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Work with Us?",
+    "description": "Let our experienced team help you navigate Pakistani tax laws and achieve full FBR compliance",
+    "phone": "+92 328 5007444",
+    "email": "info@paktaxlawyer.com",
+    "buttonText": "Schedule Consultation",
+    "buttonLink": "/contact"
+  }
+}

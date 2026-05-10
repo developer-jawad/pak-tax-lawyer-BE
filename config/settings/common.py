@@ -43,6 +43,7 @@ LOCAL_APPS = [
     "core",
     "email_logs",
     "home",
+    "service",
 ]
 
 THIRD_PARTY_APPS = [

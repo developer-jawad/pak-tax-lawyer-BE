@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "title": "Let's Discuss Your",
+    "subtitle": "Tax Consultation Needs",
+    "description": "Expert tax consultants ready to assist you with FBR compliance, tax filing, and personalized tax planning solutions.",
+    "statistics": [
+      {
+        "icon": "Schedule",
+        "value": "24h",
+        "label": "Response Time"
+      },
+      {
+        "icon": "Support",
+        "value": "10+",
+        "label": "Years Experience"
+      },
+      {
+        "icon": "VerifiedUser",
+        "value": "100%",
+        "label": "Confidential"
+      },
+      {
+        "icon": "CheckCircle",
+        "value": "500+",
+        "label": "Clients Served"
+      }
+    ]
+  },
+  "contactInfo": [
+    {
+      "icon": "Phone",
+      "title": "Phone",
+      "details": "+92 328 5007444",
+      "subtitle": "Mon-Fri 9am to 6pm"
+    },
+    {
+      "icon": "Email",
+      "title": "Email",
+      "details": "info@paktaxlawyer.com",
+      "subtitle": "Online support"
+    },
+    {
+      "icon": "LocationOn",
+      "title": "Office",
+      "details": "Islamabad, Pakistan",
+      "subtitle": "Visit us"
+    },
+    {
+      "icon": "AccessTime",
+      "title": "Working Hours",
+      "details": "Mon - Fri: 9:00 AM - 6:00 PM",
+      "subtitle": "Sat: 10:00 AM - 2:00 PM"
+    }
+  ],
+  "form": {
+    "title": "Send us a Message",
+    "description": "Fill out the form below and we'll get back to you as soon as possible",
+    "fields": {
+      "name": {
+        "label": "Full Name",
+        "error": "Name is required"
+      },
+      "email": {
+        "label": "Email Address",
+        "error": "Email is required",
+        "invalidError": "Invalid email format"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "error": "Phone number is required",
+        "invalidError": "Invalid phone number"
+      },
+      "subject": {
+        "label": "Subject",
+        "error": "Subject is required"
+      },
+      "message": {
+        "label": "Message",
+        "error": "Message is required",
+        "minLengthError": "Message must be at least 10 characters"
+      }
+    },
+    "submitButtonText": "Send Message",
+    "loadingText": "Sending...",
+    "successMessage": "Thank you! Your message has been sent successfully. We will contact you soon."
+  },
+  "cta": {
+    "icon": "CheckCircle",
+    "title": "Why Choose Pakistan Tax Lawyer?",
+    "description": "With over 10 years of experience in Pakistani tax law and FBR compliance, we provide expert guidance tailored to your specific needs. Our team of certified professionals ensures accurate, timely, and compliant tax solutions for individuals and businesses across Pakistan."
+  },
+  "map": {
+    "title": "Office Location"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive tax solutions tailored to your needs. Expert guidance for individuals and businesses."
+  },
+  "statistics": [
+    {
+      "number": "500+",
+      "label": "Clients Served"
+    },
+    {
+      "number": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "number": "98%",
+      "label": "Success Rate"
+    }
+  ],
+  "benefits": [
+    {
+      "icon": "VerifiedUser",
+      "text": "Certified Tax Experts"
+    },
+    {
+      "icon": "Security",
+      "text": "Confidential & Secure"
+    },
+    {
+      "icon": "TrendingUp",
+      "text": "Maximize Savings"
+    },
+    {
+      "icon": "CheckCircle",
+      "text": "100% Compliance"
+    }
+  ],
+  "services": [
+    {
+      "icon": "Description",
+      "title": "Tax Return Filing",
+      "description": "Complete assistance with filing income tax returns for individuals and businesses with FBR.",
+      "features": [
+        "Individual Tax Returns",
+        "Corporate Tax Returns",
+        "NRP Tax Filing",
+        "E-Filing Support"
+      ],
+      "color": "#EE1C27",
+      "buttonText": "Learn More"
+    },
+    {
+      "icon": "AccountBalance",
+      "title": "FBR Compliance",
+      "description": "Ensure full compliance with Federal Board of Revenue regulations and requirements.",
+      "features": [
+        "Sales Tax Registration",
+        "Income Tax Registration",
+        "NTN Registration",
+        "STRN Registration"
+      ],
+      "color": "#000000",
+      "buttonText": "Learn More"
+    },
+    {
+      "icon": "Assessment",
+      "title": "Tax Planning",
+      "description": "Strategic tax planning to minimize liabilities and maximize savings legally.",
+      "features": [
+        "Tax Optimization",
+        "Investment Planning",
+        "Deduction Strategies",
+        "Year-End Planning"
+      ],
+      "color": "#EE1C27",
+      "buttonText": "Learn More"
+    },
+    {
+      "icon": "Gavel",
+      "title": "Tax Litigation",
+      "description": "Expert representation in tax disputes, appeals, and litigation before tax authorities.",
+      "features": [
+        "Appeal Filing",
+        "Tax Dispute Resolution",
+        "Court Representation",
+        "Legal Consultation"
+      ],
+      "color": "#000000",
+      "buttonText": "Learn More"
+    },
+    {
+      "icon": "Business",
+      "title": "Corporate Tax Services",
+      "description": "Comprehensive tax solutions for businesses of all sizes and structures.",
+      "features": [
+        "Corporate Structuring",
+        "Transfer Pricing",
+        "Withholding Tax",
+        "Tax Audits"
+      ],
+      "color": "#EE1C27",
+      "buttonText": "Learn More"
+    },
+    {
+      "icon": "PersonOutline",
+      "title": "Personal Tax Advisory",
+      "description": "Personalized tax advice for individuals, professionals, and high-net-worth clients.",
+      "features": [
+        "Wealth Management",
+        "Property Tax",
+        "Capital Gains Tax",
+        "Tax Residency"
+      ],
+      "color": "#000000",
+      "buttonText": "Learn More"
+    }
+  ],
+  "cta": {
+    "title": "Need Professional Tax Assistance?",
+    "description": "Get expert guidance from certified tax professionals. Schedule a consultation today.",
+    "buttonText": "Get Free Consultation"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "title": "Master Pakistani Tax Laws",
+    "subtitle": "Through Expert Videos",
+    "description": "Comprehensive video tutorials on FBR compliance, tax filing, and planning strategies. Learn from certified tax professionals with real-world examples.",
+    "statistics": [
+      {
+        "icon": "OndemandVideo",
+        "value": "50+",
+        "label": "Video Tutorials"
+      },
+      {
+        "icon": "School",
+        "value": "10+",
+        "label": "Expert Topics"
+      },
+      {
+        "icon": "People",
+        "value": "5K+",
+        "label": "Students Helped"
+      },
+      {
+        "icon": "Star",
+        "value": "4.9",
+        "label": "Average Rating"
+      }
+    ]
+  },
+  "categories": ["All", "Tax Filing", "Sales Tax", "Tax Planning", "NRP Services", "Compliance"],
+  "videos": [
+    {
+      "id": 1,
+      "title": "How to File Income Tax Returns in Pakistan",
+      "description": "Complete step-by-step guide on filing your income tax returns with FBR online portal.",
+      "thumbnail": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=450&fit=crop",
+      "duration": "12:45",
+      "views": "15.2K",
+      "category": "Tax Filing",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "trending": true
+    },
+    {
+      "id": 2,
+      "title": "Understanding Sales Tax in Pakistan",
+      "description": "Learn about sales tax registration, filing, and compliance requirements for businesses.",
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop",
+      "duration": "18:30",
+      "views": "12.8K",
+      "category": "Sales Tax",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "new": true
+    },
+    {
+      "id": 3,
+      "title": "Tax Planning Strategies for Businesses",
+      "description": "Expert tips on optimizing your business tax position while staying compliant with FBR.",
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
+      "duration": "22:15",
+      "views": "18.5K",
+      "category": "Tax Planning",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "trending": true
+    },
+    {
+      "id": 4,
+      "title": "NRP Tax Guide - Non-Resident Pakistanis",
+      "description": "Everything NRPs need to know about tax obligations, property tax, and remittances.",
+      "thumbnail": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=450&fit=crop",
+      "duration": "15:20",
+      "views": "9.3K",
+      "category": "NRP Services",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "new": true
+    },
+    {
+      "id": 5,
+      "title": "Dealing with FBR Tax Audits",
+      "description": "How to prepare for and handle FBR tax audits with confidence and proper documentation.",
+      "thumbnail": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=450&fit=crop",
+      "duration": "20:10",
+      "views": "11.7K",
+      "category": "Compliance",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      "id": 6,
+      "title": "Withholding Tax Explained",
+      "description": "Understanding withholding tax obligations, rates, and filing requirements in Pakistan.",
+      "thumbnail": "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&h=450&fit=crop",
+      "duration": "14:55",
+      "views": "8.9K",
+      "category": "Tax Filing",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    }
+  ],
+  "searchPlaceholder": "Search videos...",
+  "noResults": "No videos found",
+  "tryAdjusting": "Try adjusting your search or filters"
+}

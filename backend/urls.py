@@ -21,6 +21,7 @@ app_paths = [
     path("users/", include("users.urls"), name="users"),
     path("account/", include("allauth.account.urls")),
     path("api/home/", include("home.urls"), name="home"),
+    path("api/service/", include("service.api.urls"), name="service"),
 ]
 
 other_paths = [

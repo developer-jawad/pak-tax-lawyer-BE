@@ -1,0 +1,400 @@
+{
+  "hero": {
+    "title": "Expert Tax Consultation Services",
+    "subtitle": "Navigate Pakistan Tax Laws with Confidence",
+    "description": "Get professional guidance on tax planning, compliance, and litigation from experienced tax consultants specializing in Pakistani tax law.",
+    "buttonText": "Schedule Consultation",
+    "buttonLink": "/contact"
+  },
+  "services": {
+    "subtitle": "WHAT WE OFFER",
+    "title": "Our Tax Services",
+    "description": "Comprehensive tax consultation and FBR compliance services tailored to your needs",
+    "services": [
+      {
+        "id": 1,
+        "icon": "Description",
+        "title": "Tax Return Filing",
+        "description": "Complete tax return preparation and filing services for individuals and businesses with FBR compliance.",
+        "features": [
+          "Income Tax Returns",
+          "Sales Tax Returns",
+          "Withholding Tax",
+          "Annual Information Returns"
+        ],
+        "popular": true
+      },
+      {
+        "id": 2,
+        "icon": "Gavel",
+        "title": "Tax Litigation",
+        "description": "Expert legal representation in tax disputes, appeals, and litigation before tax authorities and tribunals.",
+        "features": [
+          "Appeals & Objections",
+          "Tax Tribunal Cases",
+          "FBR Dispute Resolution",
+          "Legal Representation"
+        ]
+      },
+      {
+        "id": 3,
+        "icon": "Assessment",
+        "title": "Tax Planning",
+        "description": "Strategic tax planning and advisory services to optimize your tax position while ensuring full compliance.",
+        "features": [
+          "Tax Optimization",
+          "Business Structuring",
+          "Investment Planning",
+          "Tax Saving Strategies"
+        ]
+      },
+      {
+        "id": 4,
+        "icon": "AccountBalance",
+        "title": "Compliance Advisory",
+        "description": "Comprehensive guidance on tax compliance, regulatory requirements, and FBR obligations for businesses.",
+        "features": [
+          "Regulatory Compliance",
+          "FBR Registration",
+          "Tax Audits Support",
+          "Compliance Reviews"
+        ]
+      },
+      {
+        "id": 5,
+        "icon": "Business",
+        "title": "Corporate Tax Services",
+        "description": "Specialized corporate tax services including restructuring, mergers, acquisitions, and international taxation.",
+        "features": [
+          "Corporate Tax Planning",
+          "Transfer Pricing",
+          "M&A Tax Advisory",
+          "International Tax"
+        ]
+      },
+      {
+        "id": 6,
+        "icon": "ReceiptLong",
+        "title": "NRP Tax Services",
+        "description": "Dedicated tax services for Non-Resident Pakistanis including property tax, remittance, and investment advisory.",
+        "features": [
+          "NRP Tax Returns",
+          "Property Tax Advisory",
+          "Remittance Compliance",
+          "Investment Guidance"
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Need Expert Tax Consultation?",
+      "description": "Get professional tax advice from experienced consultants specializing in Pakistani tax law and FBR compliance",
+      "primaryButton": "Schedule Consultation",
+      "secondaryButton": "View All Services"
+    }
+  },
+  "team": {
+    "subtitle": "OUR EXPERT TEAM",
+    "title": "Meet Our Tax Professionals",
+    "description": "Experienced tax consultants and legal experts dedicated to providing exceptional service",
+    "members": [
+      {
+        "id": 1,
+        "name": "Advocate Asad Mahmood",
+        "position": "Managing Partner",
+        "specialization": "Tax Litigation & Corporate Tax",
+        "avatar": "AM",
+        "bio": "Over 15 years of experience in tax law with expertise in complex tax litigation and corporate restructuring.",
+        "credentials": ["LLB", "LLM (Tax Law)", "Advocate High Court"],
+        "email": "asad.mahmood@example.com",
+        "phone": "+92-300-1234567",
+        "linkedin": "#",
+        "featured": true,
+        "featuredLabel": "SENIOR PARTNER"
+      },
+      {
+        "id": 2,
+        "name": "Sadia Akhtar",
+        "position": "Senior Tax Consultant",
+        "specialization": "FBR Compliance & Tax Planning",
+        "avatar": "SA",
+        "bio": "Chartered accountant with 12+ years specializing in tax compliance, planning, and FBR regulatory matters.",
+        "credentials": ["CA", "ACCA", "MBA (Finance)"],
+        "email": "sadia.akhtar@example.com",
+        "phone": "+92-300-2345678",
+        "linkedin": "#",
+        "featured": true,
+        "featuredLabel": "SENIOR PARTNER"
+      },
+      {
+        "id": 3,
+        "name": "Advocate Kamran Ali",
+        "position": "Partner",
+        "specialization": "International Tax & Transfer Pricing",
+        "avatar": "KA",
+        "bio": "Expert in international taxation, transfer pricing, and cross-border transactions with global firm experience.",
+        "credentials": ["LLB", "LLM (International Tax)", "CTP"],
+        "email": "kamran.ali@example.com",
+        "phone": "+92-300-3456789",
+        "linkedin": "#"
+      },
+      {
+        "id": 4,
+        "name": "Fatima Noor",
+        "position": "Tax Manager",
+        "specialization": "Sales Tax & Indirect Taxation",
+        "avatar": "FN",
+        "bio": "Specialized in sales tax, federal excise, and customs matters with extensive FBR audit experience.",
+        "credentials": ["CA", "B.Com"],
+        "email": "fatima.noor@example.com",
+        "phone": "+92-300-4567890"
+      },
+      {
+        "id": 5,
+        "name": "Ahmed Raza",
+        "position": "Senior Associate",
+        "specialization": "Tax Litigation & Appeals",
+        "avatar": "AR",
+        "bio": "Experienced in representing clients before tax tribunals and appellate authorities across Pakistan.",
+        "credentials": ["LLB", "Advocate District Court"],
+        "email": "ahmed.raza@example.com",
+        "phone": "+92-300-5678901"
+      },
+      {
+        "id": 6,
+        "name": "Ayesha Malik",
+        "position": "Tax Consultant",
+        "specialization": "NRP & Individual Tax Services",
+        "avatar": "AM",
+        "bio": "Dedicated to helping non-resident Pakistanis and individuals with tax compliance and planning.",
+        "credentials": ["CA", "M.Com"],
+        "email": "ayesha.malik@example.com",
+        "phone": "+92-300-6789012"
+      }
+    ],
+    "credentialsLabel": "Credentials:",
+    "cta": {
+      "title": "Join Our Growing Team",
+      "description": "We're always looking for talented tax professionals and legal experts to join our team. If you're passionate about tax law and client service, we'd love to hear from you.",
+      "email": "careers@example.com"
+    }
+  },
+  "videos": {
+    "subtitle": "EDUCATIONAL CONTENT",
+    "title": "Tax Related Video",
+    "description": "Learn about Pakistani tax laws, FBR procedures, and compliance requirements through our expert video tutorials",
+    "videos": [
+      {
+        "id": 1,
+        "title": "How to File Tax Return for House",
+        "description": "Complete guide on filing tax returns for property and house ownership in Pakistan",
+        "youtubeId": "jNQXAC9IVRw",
+        "category": "Property Tax",
+        "duration": "12:45"
+      },
+      {
+        "id": 2,
+        "title": "How to Create NTN | NTN Registration",
+        "description": "Step-by-step process for NTN registration with FBR for individuals and businesses",
+        "youtubeId": "y8Yv4pnO7qc",
+        "category": "NTN Registration",
+        "duration": "15:30"
+      },
+      {
+        "id": 3,
+        "title": "How to File Tax Return for Agriculture Income",
+        "description": "Tax filing guide for agricultural income and farming business in Pakistan",
+        "youtubeId": "Ks-_Mh1QhMc",
+        "category": "Agriculture Tax",
+        "duration": "18:20"
+      },
+      {
+        "id": 4,
+        "title": "How to Become Filer in 2025",
+        "description": "Complete process and requirements to become an active tax filer with FBR",
+        "youtubeId": "c0KYU2j0TM4",
+        "category": "Tax Filing",
+        "duration": "10:15"
+      },
+      {
+        "id": 5,
+        "title": "Sales Tax Registration Guide",
+        "description": "How to register for sales tax and understand your obligations under Pakistani law",
+        "youtubeId": "gCNeDWCI0vo",
+        "category": "Sales Tax",
+        "duration": "14:50"
+      },
+      {
+        "id": 6,
+        "title": "Tax Benefits for Startups",
+        "description": "Understanding tax incentives and benefits available for new businesses in Pakistan",
+        "youtubeId": "MtN1YnoL46Q",
+        "category": "Business Tax",
+        "duration": "16:40"
+      }
+    ],
+    "cta": {
+      "title": "Subscribe to Our YouTube Channel",
+      "description": "Stay updated with the latest tax tips, FBR updates, and compliance guidelines. New videos every week!",
+      "videoCount": "100+",
+      "videoCountLabel": "Educational Videos"
+    }
+  },
+  "blogs": {
+    "subtitle": "INSIGHTS & UPDATES",
+    "title": "Latest Tax Blogs",
+    "description": "Stay informed with expert insights on Pakistani tax laws, FBR updates, and compliance strategies",
+    "blogPosts": [
+      {
+        "id": 1,
+        "title": "Understanding FBR Tax Return Filing Process in Pakistan 2025",
+        "excerpt": "A comprehensive guide to filing your tax returns with the Federal Board of Revenue, including deadlines, requirements, and common mistakes to avoid.",
+        "author": "Advocate Asad Mahmood",
+        "date": "May 8, 2026",
+        "readTime": "5 min read",
+        "category": "Tax Filing",
+        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+        "slug": "fbr-tax-return-filing-process-2025"
+      },
+      {
+        "id": 2,
+        "title": "Tax Benefits for Startups and Small Businesses in Pakistan",
+        "excerpt": "Discover the tax incentives, exemptions, and benefits available for new businesses and startups under Pakistani tax law.",
+        "author": "Sadia Akhtar",
+        "date": "May 5, 2026",
+        "readTime": "7 min read",
+        "category": "Business Tax",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+        "slug": "tax-benefits-startups-pakistan"
+      },
+      {
+        "id": 3,
+        "title": "How to Become a Tax Filer: Complete Guide for Individuals",
+        "excerpt": "Step-by-step process to register as an active tax filer with FBR and enjoy the benefits of filer status in Pakistan.",
+        "author": "Kamran Ali",
+        "date": "May 2, 2026",
+        "readTime": "6 min read",
+        "category": "Tax Planning",
+        "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+        "slug": "become-tax-filer-guide"
+      },
+      {
+        "id": 4,
+        "title": "Sales Tax Registration: Requirements and Procedures",
+        "excerpt": "Everything you need to know about sales tax registration, compliance requirements, and filing obligations for businesses.",
+        "author": "Fatima Noor",
+        "date": "April 28, 2026",
+        "readTime": "8 min read",
+        "category": "Sales Tax",
+        "image": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80",
+        "slug": "sales-tax-registration-guide"
+      },
+      {
+        "id": 5,
+        "title": "NRP Tax Guide: Filing Returns as a Non-Resident Pakistani",
+        "excerpt": "Comprehensive guide for Non-Resident Pakistanis on tax obligations, property tax, and investment income in Pakistan.",
+        "author": "Ahmed Raza",
+        "date": "April 25, 2026",
+        "readTime": "9 min read",
+        "category": "NRP Tax",
+        "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80",
+        "slug": "nrp-tax-filing-guide"
+      },
+      {
+        "id": 6,
+        "title": "Corporate Tax Planning Strategies for 2025",
+        "excerpt": "Advanced tax planning strategies for corporations to optimize tax liability while ensuring full compliance with FBR regulations.",
+        "author": "Ayesha Malik",
+        "date": "April 22, 2026",
+        "readTime": "10 min read",
+        "category": "Corporate Tax",
+        "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+        "slug": "corporate-tax-planning-2025"
+      }
+    ],
+    "cta": {
+      "buttonText": "View All Blogs",
+      "buttonLink": "/blogs"
+    }
+  },
+  "testimonials": {
+    "subtitle": "CLIENT TESTIMONIALS",
+    "title": "What Our Clients Say",
+    "description": "Trusted by businesses and individuals across Pakistan for expert tax consultation and FBR compliance services",
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Ahmed Hassan",
+        "role": "CEO",
+        "company": "Hassan Textiles Ltd",
+        "avatar": "AH",
+        "rating": 5,
+        "testimonial": "Outstanding service! They helped us navigate complex FBR regulations and saved our company significant tax liabilities. Their expertise in Pakistani tax law is unmatched.",
+        "location": "Karachi"
+      },
+      {
+        "id": 2,
+        "name": "Fatima Khan",
+        "role": "Business Owner",
+        "company": "Khan Enterprises",
+        "avatar": "FK",
+        "rating": 5,
+        "testimonial": "Professional, knowledgeable, and responsive. They handled our tax audit with exceptional skill and kept us informed throughout the entire process. Highly recommended!",
+        "location": "Lahore"
+      },
+      {
+        "id": 3,
+        "name": "Muhammad Ali",
+        "role": "Director",
+        "company": "Ali Trading Co.",
+        "avatar": "MA",
+        "rating": 5,
+        "testimonial": "Their tax planning strategies have been invaluable to our business growth. They understand the nuances of Pakistani tax law and provide practical, effective solutions.",
+        "location": "Islamabad"
+      },
+      {
+        "id": 4,
+        "name": "Sarah Malik",
+        "role": "NRP",
+        "company": "Individual Taxpayer",
+        "avatar": "SM",
+        "rating": 5,
+        "testimonial": "As a non-resident Pakistani, filing taxes was always confusing. They made the entire process smooth and stress-free. Excellent communication and timely service.",
+        "location": "Dubai, UAE"
+      },
+      {
+        "id": 5,
+        "name": "Imran Siddiqui",
+        "role": "CFO",
+        "company": "Siddiqui Industries",
+        "avatar": "IS",
+        "rating": 5,
+        "testimonial": "We have been working with them for over 3 years. Their deep understanding of tax compliance and proactive approach has been instrumental in our financial planning.",
+        "location": "Faisalabad"
+      },
+      {
+        "id": 6,
+        "name": "Ayesha Rahman",
+        "role": "Entrepreneur",
+        "company": "Rahman Consulting",
+        "avatar": "AR",
+        "rating": 5,
+        "testimonial": "Exceptional tax consultants! They helped me set up my business with proper tax structure from day one. Their advice has been crucial for my startup success.",
+        "location": "Rawalpindi"
+      }
+    ],
+    "cta": {
+      "title": "Join Our Satisfied Clients",
+      "description": "Experience professional tax consultation services trusted by businesses across Pakistan",
+      "stats": [
+        {
+          "value": "500+",
+          "label": "Happy Clients"
+        },
+        {
+          "value": "10+",
+          "label": "Years of Experience"
+        }
+      ]
+    }
+  }
+}

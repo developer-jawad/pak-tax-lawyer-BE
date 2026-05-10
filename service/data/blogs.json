@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "title": "Tax Insights & Expert Resources",
+    "subtitle": "Stay informed with expert articles, practical guides, and the latest updates on Pakistani tax law and FBR compliance.",
+    "statistics": [
+      {
+        "icon": "Article",
+        "value": "100+",
+        "label": "Articles Published"
+      },
+      {
+        "icon": "Lightbulb",
+        "value": "15+",
+        "label": "Expert Topics"
+      },
+      {
+        "icon": "Visibility",
+        "value": "50K+",
+        "label": "Monthly Readers"
+      },
+      {
+        "icon": "Update",
+        "value": "Weekly",
+        "label": "New Content"
+      }
+    ]
+  },
+  "categories": ["All", "Tax Filing", "Business Tax", "Tax Planning", "Sales Tax", "NRP Tax", "Corporate Tax", "Property Tax"],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Understanding FBR Tax Return Filing Process in Pakistan 2025",
+      "excerpt": "A comprehensive guide to filing your tax returns with the Federal Board of Revenue, including deadlines, requirements, and common mistakes to avoid.",
+      "author": "Advocate Asad Mahmood",
+      "date": "May 8, 2026",
+      "readTime": "5 min read",
+      "category": "Tax Filing",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+      "slug": "fbr-tax-return-filing-process-2025"
+    },
+    {
+      "id": 2,
+      "title": "Tax Benefits for Startups and Small Businesses in Pakistan",
+      "excerpt": "Discover the tax incentives, exemptions, and benefits available for new businesses and startups under Pakistani tax law.",
+      "author": "Sadia Akhtar",
+      "date": "May 5, 2026",
+      "readTime": "7 min read",
+      "category": "Business Tax",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+      "slug": "tax-benefits-startups-pakistan"
+    },
+    {
+      "id": 3,
+      "title": "How to Become a Tax Filer: Complete Guide for Individuals",
+      "excerpt": "Step-by-step process to register as an active tax filer with FBR and enjoy the benefits of filer status in Pakistan.",
+      "author": "Kamran Ali",
+      "date": "May 2, 2026",
+      "readTime": "6 min read",
+      "category": "Tax Planning",
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+      "slug": "become-tax-filer-guide"
+    },
+    {
+      "id": 4,
+      "title": "Sales Tax Registration: Requirements and Procedures",
+      "excerpt": "Everything you need to know about sales tax registration, compliance requirements, and filing obligations for businesses.",
+      "author": "Fatima Noor",
+      "date": "April 28, 2026",
+      "readTime": "8 min read",
+      "category": "Sales Tax",
+      "image": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80",
+      "slug": "sales-tax-registration-guide"
+    },
+    {
+      "id": 5,
+      "title": "NRP Tax Guide: Filing Returns as a Non-Resident Pakistani",
+      "excerpt": "Comprehensive guide for Non-Resident Pakistanis on tax obligations, property tax, and investment income in Pakistan.",
+      "author": "Ahmed Raza",
+      "date": "April 25, 2026",
+      "readTime": "9 min read",
+      "category": "NRP Tax",
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80",
+      "slug": "nrp-tax-filing-guide"
+    },
+    {
+      "id": 6,
+      "title": "Corporate Tax Planning Strategies for 2025",
+      "excerpt": "Advanced tax planning strategies for corporations to optimize tax liability while ensuring full compliance with FBR regulations.",
+      "author": "Ayesha Malik",
+      "date": "April 22, 2026",
+      "readTime": "10 min read",
+      "category": "Corporate Tax",
+      "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+      "slug": "corporate-tax-planning-2025"
+    },
+    {
+      "id": 7,
+      "title": "Tax Deductions You Should Know About in Pakistan",
+      "excerpt": "Maximize your tax savings by understanding all available deductions and exemptions under Pakistani tax law.",
+      "author": "Advocate Asad Mahmood",
+      "date": "April 18, 2026",
+      "readTime": "6 min read",
+      "category": "Tax Planning",
+      "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+      "slug": "tax-deductions-pakistan"
+    },
+    {
+      "id": 8,
+      "title": "Understanding Withholding Tax in Pakistan",
+      "excerpt": "Complete guide to withholding tax obligations, rates, and compliance requirements for businesses and individuals.",
+      "author": "Sadia Akhtar",
+      "date": "April 15, 2026",
+      "readTime": "7 min read",
+      "category": "Tax Filing",
+      "image": "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&q=80",
+      "slug": "withholding-tax-guide"
+    },
+    {
+      "id": 9,
+      "title": "Property Tax in Pakistan: What You Need to Know",
+      "excerpt": "Essential information about property tax, capital gains tax, and rental income taxation for property owners.",
+      "author": "Kamran Ali",
+      "date": "April 12, 2026",
+      "readTime": "8 min read",
+      "category": "Property Tax",
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+      "slug": "property-tax-pakistan"
+    }
+  ],
+  "searchPlaceholder": "Search articles...",
+  "noResults": "No articles found matching your search."
+}
