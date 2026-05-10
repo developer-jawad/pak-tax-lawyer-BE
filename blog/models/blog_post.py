@@ -38,7 +38,9 @@ class ContentBlock(BaseModel):
         help_text="Type of content block",
     )
     content = models.JSONField(help_text="Content data for the block")
-    order = models.PositiveIntegerField(default=0, help_text="Order of the content block")
+    order = models.PositiveIntegerField(
+        default=0, help_text="Order of the content block"
+    )
 
     objects = models.Manager()
     active_objects = ActiveObjectsManager()
@@ -49,7 +51,11 @@ class ContentBlock(BaseModel):
         ordering = ["order"]
 
     def __str__(self):
-        content_preview = str(self.content)[:50] + "..." if len(str(self.content)) > 50 else str(self.content)
+        content_preview = (
+            str(self.content)[:50] + "..."
+            if len(str(self.content)) > 50
+            else str(self.content)
+        )
         return f"{self.get_content_type_display()} (Order: {self.order}) - {content_preview}"
 
 

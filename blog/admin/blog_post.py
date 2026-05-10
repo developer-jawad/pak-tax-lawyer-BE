@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from blog.models import BlogPost, Tag, ContentBlock
+from blog.models import BlogPost, ContentBlock, Tag
 
 
 @admin.register(Tag)
@@ -33,6 +33,7 @@ class ContentBlockAdmin(admin.ModelAdmin):
             preview = str(obj.content)[:100]
             return preview + "..." if len(preview) > 100 else preview
         return str(obj.content)[:100]
+
     content_preview.short_description = "Content"
 
 

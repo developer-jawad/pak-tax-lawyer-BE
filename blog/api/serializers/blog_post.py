@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from blog.models import BlogPost, Tag, ContentBlock
+from blog.models import BlogPost, ContentBlock, Tag
 from common.api.serializers import DynamicFieldsModelSerializer
 from common.constants import BLOG_CATEGORIES
 
