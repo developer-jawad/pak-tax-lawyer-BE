@@ -1,0 +1,14 @@
+{% extends "users/base.html" %}
+{% load i18n %}
+
+{% block head_title %}
+    {% trans "Confirm Email Address" %}
+{% endblock head_title %}
+
+{% block content %}
+    <div class="text-center">
+        <h4 class="fw-semibold mt-4">
+            {% trans "Please open our mobile app to log in." %}
+        </h4>
+    </div>
+{% endblock content %}
