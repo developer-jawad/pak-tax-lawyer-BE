@@ -7,12 +7,18 @@ from home.models import (
     TeamMember,
     TeamCTA,
     TeamSection,
+    Testimonial,
+    TestimonialCTA,
+    TestimonialSection,
 )
 from home.api.serializers import (
     HeroSectionSerializer,
     TeamSectionSerializer,
     TeamMemberSerializer,
     TeamCTASerializer,
+    TestimonialSectionSerializer,
+    TestimonialSerializer,
+    TestimonialCTASerializer,
 )
 
 from service.models import (
@@ -55,6 +61,11 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
         team_members = TeamMember.active_objects.all()
         team_cta = TeamCTA.active_objects.filter(is_team_section=True).first()
         
+        # Testimonial Section
+        testimonial_section = TestimonialSection.active_objects.first()
+        testimonials = Testimonial.active_objects.all()
+        testimonial_cta = TestimonialCTA.active_objects.filter(is_testimonial_section=True).first()
+        
         # Blog Section
         blog_section = BlogSection.active_objects.first()
         blog_posts = BlogPost.active_objects.all()[:6]
@@ -71,6 +82,11 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
                 'section': TeamSectionSerializer(team_section).data if team_section else None,
                 'team_members': TeamMemberSerializer(team_members, many=True).data,
                 'cta': TeamCTASerializer(team_cta).data if team_cta else None,
+            },
+            'testimonial_section': {
+                'section': TestimonialSectionSerializer(testimonial_section).data if testimonial_section else None,
+                'testimonials': TestimonialSerializer(testimonials, many=True).data,
+                'cta': TestimonialCTASerializer(testimonial_cta).data if testimonial_cta else None,
             },
             'blog_section': {
                 'section': BlogSectionSerializer(blog_section).data if blog_section else None,

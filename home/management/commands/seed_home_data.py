@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from home.models import HeroSection, TeamSection, TeamMember, TeamCTA
+from home.models import HeroSection, TeamSection, TeamMember, TeamCTA, TestimonialSection, Testimonial, TestimonialCTA
 
 
 class Command(BaseCommand):
@@ -136,5 +136,113 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS(f'Created TeamCTA: {team_cta.title}'))
         else:
             self.stdout.write(self.style.WARNING(f'TeamCTA already exists: {team_cta.title}'))
+
+        # Create Testimonial Section
+        testimonial_section, created = TestimonialSection.objects.get_or_create(
+            title='What Our Clients Say',
+            defaults={
+                'subtitle': 'CLIENT TESTIMONIALS',
+                'description': 'Trusted by businesses and individuals across Pakistan for expert tax consultation and FBR compliance services',
+                'is_active': True,
+                'is_deleted': False,
+            }
+        )
+        if created:
+            self.stdout.write(self.style.SUCCESS(f'Created TestimonialSection: {testimonial_section.title}'))
+        else:
+            self.stdout.write(self.style.WARNING(f'TestimonialSection already exists: {testimonial_section.title}'))
+
+        # Create Testimonials
+        testimonials_data = [
+            {
+                'name': 'Ahmed Hassan',
+                'role': 'CEO',
+                'company': 'Hassan Textiles Ltd',
+                'avatar': 'AH',
+                'rating': 5,
+                'testimonial': 'Outstanding service! They helped us navigate complex FBR regulations and saved our company significant tax liabilities. Their expertise in Pakistani tax law is unmatched.',
+                'location': 'Karachi',
+                'featured': True,
+            },
+            {
+                'name': 'Fatima Khan',
+                'role': 'Business Owner',
+                'company': 'Khan Enterprises',
+                'avatar': 'FK',
+                'rating': 5,
+                'testimonial': 'Professional, knowledgeable, and responsive. They handled our tax audit with exceptional skill and kept us informed throughout the entire process. Highly recommended!',
+                'location': 'Lahore',
+                'featured': True,
+            },
+            {
+                'name': 'Muhammad Ali',
+                'role': 'Director',
+                'company': 'Ali Trading Co.',
+                'avatar': 'MA',
+                'rating': 5,
+                'testimonial': 'Their tax planning strategies have been invaluable to our business growth. They understand the nuances of Pakistani tax law and provide practical, effective solutions.',
+                'location': 'Islamabad',
+                'featured': True,
+            },
+            {
+                'name': 'Sarah Malik',
+                'role': 'NRP',
+                'company': 'Individual Taxpayer',
+                'avatar': 'SM',
+                'rating': 5,
+                'testimonial': 'As a non-resident Pakistani, filing taxes was always confusing. They made the entire process smooth and stress-free. Excellent communication and timely service.',
+                'location': 'Dubai, UAE',
+                'featured': True,
+            },
+            {
+                'name': 'Imran Siddiqui',
+                'role': 'CFO',
+                'company': 'Siddiqui Industries',
+                'avatar': 'IS',
+                'rating': 5,
+                'testimonial': 'We have been working with them for over 3 years. Their deep understanding of tax compliance and proactive approach has been instrumental in our financial planning.',
+                'location': 'Faisalabad',
+            },
+            {
+                'name': 'Ayesha Rahman',
+                'role': 'Entrepreneur',
+                'company': 'Rahman Consulting',
+                'avatar': 'AR',
+                'rating': 5,
+                'testimonial': 'Exceptional tax consultants! They helped me set up my business with proper tax structure from day one. Their advice has been crucial for my startup success.',
+                'location': 'Rawalpindi',
+            },
+        ]
+
+        for testimonial_data in testimonials_data:
+            testimonial, created = Testimonial.objects.get_or_create(
+                name=testimonial_data['name'],
+                defaults={
+                    **testimonial_data,
+                    'is_active': True,
+                    'is_deleted': False,
+                }
+            )
+            if created:
+                self.stdout.write(self.style.SUCCESS(f'Created Testimonial: {testimonial.name}'))
+            else:
+                self.stdout.write(self.style.WARNING(f'Testimonial already exists: {testimonial.name}'))
+
+        # Create Testimonial CTA
+        testimonial_cta, created = TestimonialCTA.objects.get_or_create(
+            title='Join Our Satisfied Clients',
+            defaults={
+                'description': 'Experience professional tax consultation services trusted by businesses across Pakistan',
+                'button_text': 'Get Started',
+                'button_link': '/contact',
+                'is_testimonial_section': True,
+                'is_active': True,
+                'is_deleted': False,
+            }
+        )
+        if created:
+            self.stdout.write(self.style.SUCCESS(f'Created TestimonialCTA: {testimonial_cta.title}'))
+        else:
+            self.stdout.write(self.style.WARNING(f'TestimonialCTA already exists: {testimonial_cta.title}'))
 
         self.stdout.write(self.style.SUCCESS('Successfully seeded all home data!'))
