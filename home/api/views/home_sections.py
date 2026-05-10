@@ -43,6 +43,17 @@ from blog.api.serializers import (
     BlogCTASerializer,
 )
 
+from videos.models import (
+    VideoSection,
+    Video,
+    VideoCTA,
+)
+from videos.api.serializers import (
+    VideoSectionSerializer,
+    VideoSerializer,
+    VideoCTASerializer,
+)
+
 
 class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
@@ -71,6 +82,11 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
         blog_posts = BlogPost.active_objects.all()[:6]
         blog_cta = BlogCTA.active_objects.filter(is_blog_section=True).first()
 
+        # Video Section
+        video_section = VideoSection.active_objects.first()
+        videos = Video.active_objects.all()[:6]
+        video_cta = VideoCTA.active_objects.first()
+
         return Response({
             'hero_section': HeroSectionSerializer(hero_section).data if hero_section else None,
             'service_section': {
@@ -92,5 +108,10 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
                 'section': BlogSectionSerializer(blog_section).data if blog_section else None,
                 'blog_posts': BlogPostSerializer(blog_posts, many=True).data,
                 'cta': BlogCTASerializer(blog_cta).data if blog_cta else None,
+            },
+            'video_section': {
+                'section': VideoSectionSerializer(video_section).data if video_section else None,
+                'videos': VideoSerializer(videos, many=True).data,
+                'cta': VideoCTASerializer(video_cta).data if video_cta else None,
             },
         })

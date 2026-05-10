@@ -46,6 +46,7 @@ LOCAL_APPS = [
     "service",
     "blog",
     "about",
+    "videos",
 ]
 
 THIRD_PARTY_APPS = [
