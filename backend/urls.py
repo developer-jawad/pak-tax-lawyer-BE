@@ -25,6 +25,8 @@ app_paths = [
     path("api/", include("blog.urls"), name="blog"),
     path("api/", include("about.urls")),
     path("api/", include("videos.urls")),
+    path("api/", include("contact.urls")),
+    path("api/", include("footer.urls")),
 ]
 
 other_paths = [
