@@ -11,6 +11,7 @@ class ServiceCTASerializer(DynamicFieldsModelSerializer):
             'title',
             'description',
             'button_text',
+            'button_link',
             'created_at',
             'updated_at',
         ]

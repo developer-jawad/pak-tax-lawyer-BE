@@ -16,14 +16,15 @@ class ServiceInline(admin.TabularInline):
 class ServiceSectionAdmin(admin.ModelAdmin):
     list_display = [
         'id',
+        'is_active',
+        'is_deleted',
         'title',
         'subtitle',
-        'cta_title',
         'created_at',
         'updated_at',
     ]
-    list_filter = ['created_at', 'updated_at']
-    search_fields = ['title', 'subtitle', 'description', 'cta_title']
+    list_filter = ['is_active', 'is_deleted', 'created_at', 'updated_at']
+    search_fields = ['title', 'subtitle', 'description']
     readonly_fields = ['created_at', 'updated_at']
     inlines = [
         ServiceInline,
@@ -33,11 +34,8 @@ class ServiceSectionAdmin(admin.ModelAdmin):
         ('Section Content', {
             'fields': ('subtitle', 'title', 'description')
         }),
-        ('CTA Configuration', {
-            'fields': ('cta_title', 'cta_description', 'primary_button', 'secondary_button')
-        }),
-        ('Features Label', {
-            'fields': ('features_label',)
+        ('Status', {
+            'fields': ('is_active', 'is_deleted')
         }),
         ('Timestamps', {
             'fields': ('created_at', 'updated_at'),

@@ -7,6 +7,8 @@ from service.models import Service
 class ServiceAdmin(admin.ModelAdmin):
     list_display = [
         'id',
+        'is_active',
+        'is_deleted',
         'title',
         'icon',
         'badge',
@@ -14,7 +16,7 @@ class ServiceAdmin(admin.ModelAdmin):
         'created_at',
         'updated_at',
     ]
-    list_filter = ['badge', 'popular', 'created_at', 'updated_at']
+    list_filter = ['is_active', 'is_deleted', 'badge', 'popular', 'created_at', 'updated_at']
     search_fields = ['title', 'description']
     readonly_fields = ['created_at', 'updated_at']
     
@@ -24,6 +26,9 @@ class ServiceAdmin(admin.ModelAdmin):
         }),
         ('Features', {
             'fields': ('features',)
+        }),
+        ('Status', {
+            'fields': ('is_active', 'is_deleted')
         }),
         ('Timestamps', {
             'fields': ('created_at', 'updated_at'),
