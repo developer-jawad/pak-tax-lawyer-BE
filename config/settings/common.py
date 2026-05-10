@@ -38,13 +38,14 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    "users",
     "common",
     "core",
+    "users",
     "email_logs",
     "home",
     "service",
     "blog",
+    "about",
 ]
 
 THIRD_PARTY_APPS = [

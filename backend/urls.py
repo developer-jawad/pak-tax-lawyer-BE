@@ -23,6 +23,7 @@ app_paths = [
     path("api/home/", include("home.urls"), name="home"),
     path("api/", include("service.urls"), name="service"),
     path("api/", include("blog.urls"), name="blog"),
+    path("api/", include("about.urls")),
 ]
 
 other_paths = [
