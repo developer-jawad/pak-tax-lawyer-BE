@@ -2,7 +2,7 @@ from collections import namedtuple
 
 APP_NAME = "common"
 
-SITE_NAME = "DRF Boilerplate"
+SITE_NAME = "PAK TAX LAWYER"
 
 BLOG_CATEGORIES = namedtuple(
     "BLOG_CATEGORIES",

@@ -1,5 +1,5 @@
 """
-ASGI config for DRF Boilerplate project.
+ASGI config for PAK TAX LAWYER project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

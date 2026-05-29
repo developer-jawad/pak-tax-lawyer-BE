@@ -33,11 +33,6 @@ class Command(BaseCommand):
             defaults={
                 "subtitle": "WHAT WE OFFER",
                 "description": "Comprehensive tax consultation and FBR compliance services tailored to your needs",
-                "cta_title": "Need Expert Tax Consultation?",
-                "cta_description": "Get professional tax advice from experienced consultants specializing in Pakistani tax law and FBR compliance",
-                "primary_button": "Schedule Consultation",
-                "secondary_button": "View All Services",
-                "features_label": "Key Features:",
             },
         )
 
@@ -100,13 +95,24 @@ class Command(BaseCommand):
 
         # Seed CTA
         cta_data = data.get("cta", {})
+        cta_title = cta_data.get("title") or "Need Expert Tax Consultation?"
+        cta_description = cta_data.get("description") or (
+            "Get professional tax advice from experienced consultants "
+            "specializing in Pakistani tax law and FBR compliance"
+        )
+        cta_button_text = cta_data.get("buttonText") or "Schedule Consultation"
+        cta_button_link = (
+            cta_data.get("buttonLink")
+            or "https://www.paktaxlawyer.com/contact"
+        )
+
         cta, created = ServiceCTA.objects.get_or_create(
-            title=cta_data.get("title"),
+            title=cta_title,
             defaults={
-                "description": cta_data.get("description"),
-                "button_text": cta_data.get("buttonText"),
-                "button_link": cta_data.get("buttonLink", ""),
-                "is_service_section": cta_data.get("isServiceSection", False),
+                "description": cta_description,
+                "button_text": cta_button_text,
+                "button_link": cta_button_link,
+                "is_service_section": cta_data.get("isServiceSection", True),
             },
         )
         if created:

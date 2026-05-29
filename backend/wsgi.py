@@ -1,5 +1,5 @@
 """
-WSGI config for DRF Boilerplate project.
+WSGI config for PAK TAX LAWYER project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
