@@ -1,17 +1,24 @@
 from config.env import BASE_DIR
 from config.settings.common import *
 
-# Database
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": env.DB_NAME,
-        "USER": env.DB_USER,
-        "PASSWORD": env.DB_PASSWORD,
-        "HOST": env.DB_HOST,
-        "PORT": env.DB_PORT,
+if env.DATABASE_URI:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            **env.env.db_url_config(env.DATABASE_URI),
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": env.DB_NAME,
+            "USER": env.DB_USER,
+            "PASSWORD": env.DB_PASSWORD,
+            "HOST": env.DB_HOST,
+            "PORT": env.DB_PORT,
+        }
+    }
 
 
 # Static files (CSS, JavaScript, Images)
