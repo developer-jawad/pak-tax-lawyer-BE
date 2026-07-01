@@ -31,6 +31,9 @@ class FooterContact(BaseModel):
     class Meta:
         verbose_name = "Footer Contact"
         verbose_name_plural = "Footer Contact"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="footer_contact_active"),
+        ]
 
     def __str__(self):
         return self.title

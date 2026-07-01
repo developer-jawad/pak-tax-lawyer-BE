@@ -10,7 +10,9 @@ from blog.models import BlogPost
 
 
 class BlogPostViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = BlogPost.objects.filter(is_active=True, is_deleted=False)
+    queryset = BlogPost.active_objects.prefetch_related(
+        "tags", "content_blocks", "related_posts"
+    )
     serializer_class = BlogPostSerializer
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend, SearchFilter]

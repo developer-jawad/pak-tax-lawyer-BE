@@ -18,6 +18,9 @@ class FooterBrand(BaseModel):
     class Meta:
         verbose_name = "Footer Brand"
         verbose_name_plural = "Footer Brands"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="footer_brand_active"),
+        ]
 
     def __str__(self):
         return self.name

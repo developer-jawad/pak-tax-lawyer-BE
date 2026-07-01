@@ -17,6 +17,9 @@ class ServiceBenefit(BaseModel):
         verbose_name = "Service Benefit"
         verbose_name_plural = "Service Benefits"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="service_benefit_active"),
+        ]
 
     def __str__(self):
         return self.text

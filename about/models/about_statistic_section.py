@@ -15,6 +15,9 @@ class AboutStatisticSection(BaseModel):
     class Meta:
         verbose_name = "About Statistic Section"
         verbose_name_plural = "About Statistic Sections"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="about_statsect_active"),
+        ]
 
     def __str__(self):
         return self.title

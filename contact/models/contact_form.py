@@ -38,6 +38,9 @@ class ContactForm(BaseModel):
     class Meta:
         verbose_name = "Contact Form"
         verbose_name_plural = "Contact Forms"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="contact_form_active"),
+        ]
 
     def __str__(self):
         return self.title

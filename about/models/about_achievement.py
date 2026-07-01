@@ -18,6 +18,9 @@ class AboutAchievement(BaseModel):
         verbose_name = "About Achievement"
         verbose_name_plural = "About Achievements"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="about_achievement_active"),
+        ]
 
     def __str__(self):
         return self.title

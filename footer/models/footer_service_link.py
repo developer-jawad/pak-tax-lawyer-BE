@@ -15,6 +15,9 @@ class FooterServiceLink(BaseModel):
         verbose_name = "Footer Service Link"
         verbose_name_plural = "Footer Service Links"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="footer_servicelink_active"),
+        ]
 
     def __str__(self):
         return self.label

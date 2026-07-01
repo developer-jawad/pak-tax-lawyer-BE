@@ -25,6 +25,9 @@ class ServiceCTA(BaseModel):
     class Meta:
         verbose_name = "Service CTA"
         verbose_name_plural = "Service CTAs"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="service_cta_active"),
+        ]
 
     def __str__(self):
         return self.title

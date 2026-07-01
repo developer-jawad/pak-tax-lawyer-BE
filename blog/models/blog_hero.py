@@ -18,6 +18,9 @@ class BlogHero(BaseModel):
     class Meta:
         verbose_name = "Blog Hero"
         verbose_name_plural = "Blog Heroes"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="blog_hero_active"),
+        ]
 
     def __str__(self):
         return self.title

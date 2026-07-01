@@ -23,6 +23,9 @@ class TestimonialCTA(BaseModel):
     class Meta:
         verbose_name = "Testimonial CTA"
         verbose_name_plural = "Testimonial CTAs"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="home_testimcta_active"),
+        ]
 
     def __str__(self):
         return self.title

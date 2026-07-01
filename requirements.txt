@@ -24,6 +24,7 @@ django-filter~=24.3
 # OpenAI
 openai~=1.93.0
 
+# Background jobs (Redis required for RQ worker — keep redis client)
 rq==2.2.0
 django-rq==3.0.0
 redis==5.2.1
@@ -34,5 +35,11 @@ resend~=2.7.0
 # Sentry
 sentry_sdk~=2.45.0
 
-# Production
+# Static files & compression (serves static on Vercel, no separate CDN needed)
+whitenoise~=6.9.0
+
+# Image field support
+Pillow~=11.2.1
+
+# Production WSGI server
 gunicorn~=21.2.0

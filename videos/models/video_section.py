@@ -28,6 +28,9 @@ class VideoSection(BaseModel):
     class Meta:
         verbose_name = "Video Section"
         verbose_name_plural = "Video Sections"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="video_section_active"),
+        ]
 
     def __str__(self):
         return self.title

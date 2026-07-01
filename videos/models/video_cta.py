@@ -20,6 +20,9 @@ class VideoCTA(BaseModel):
     class Meta:
         verbose_name = "Video CTA"
         verbose_name_plural = "Video CTAs"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="video_cta_active"),
+        ]
 
     def __str__(self):
         return self.title

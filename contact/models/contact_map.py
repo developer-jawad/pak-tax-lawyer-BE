@@ -14,6 +14,9 @@ class ContactMap(BaseModel):
     class Meta:
         verbose_name = "Contact Map"
         verbose_name_plural = "Contact Maps"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="contact_map_active"),
+        ]
 
     def __str__(self):
         return self.title

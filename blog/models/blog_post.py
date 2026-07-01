@@ -115,6 +115,11 @@ class BlogPost(BaseModel):
         verbose_name = "Blog Post"
         verbose_name_plural = "Blog Posts"
         ordering = ["-date", "-created_at"]
+        indexes = [
+            models.Index(fields=["slug"], name="blog_post_slug_idx"),
+            models.Index(fields=["is_active", "is_deleted", "-date"], name="blog_post_active_date_idx"),
+            models.Index(fields=["category", "is_active", "is_deleted"], name="blog_post_category_idx"),
+        ]
 
     def __str__(self):
         return self.title

@@ -15,6 +15,9 @@ class FooterLegalLink(BaseModel):
         verbose_name = "Footer Legal Link"
         verbose_name_plural = "Footer Legal Links"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="footer_legallink_active"),
+        ]
 
     def __str__(self):
         return self.label

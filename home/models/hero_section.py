@@ -31,6 +31,9 @@ class HeroSection(BaseModel):
         verbose_name = "Hero Section"
         verbose_name_plural = "Hero Sections"
         ordering = ["-created_at"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="home_herosection_active"),
+        ]
 
     def __str__(self):
         return self.title

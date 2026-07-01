@@ -20,6 +20,9 @@ class BlogSection(BaseModel):
     class Meta:
         verbose_name = "Blog Section"
         verbose_name_plural = "Blog Sections"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="blog_section_active"),
+        ]
 
     def __str__(self):
         return self.title

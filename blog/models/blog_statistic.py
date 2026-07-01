@@ -20,6 +20,9 @@ class BlogStatistic(BaseModel):
         verbose_name = "Blog Statistic"
         verbose_name_plural = "Blog Statistics"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="blog_stat_active"),
+        ]
 
     def __str__(self):
         return f"{self.number} - {self.label}"

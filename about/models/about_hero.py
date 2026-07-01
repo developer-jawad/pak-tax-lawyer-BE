@@ -19,6 +19,9 @@ class AboutHero(BaseModel):
     class Meta:
         verbose_name = "About Hero"
         verbose_name_plural = "About Heroes"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="about_hero_active"),
+        ]
 
     def __str__(self):
         return self.title

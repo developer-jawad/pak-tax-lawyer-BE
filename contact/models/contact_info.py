@@ -23,6 +23,9 @@ class ContactInfo(BaseModel):
         verbose_name = "Contact Info"
         verbose_name_plural = "Contact Info"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="contact_info_active"),
+        ]
 
     def __str__(self):
         return f"{self.title} - {self.details}"

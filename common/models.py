@@ -76,3 +76,6 @@ class IsDeletedMixin(models.Model):
 class BaseModel(IsActiveMixin, IsDeletedMixin, TimeStampMixin):
     class Meta:
         abstract = True
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="%(app_label)s_%(class)s_active_deleted"),
+        ]

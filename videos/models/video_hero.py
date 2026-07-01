@@ -19,6 +19,9 @@ class VideoHero(BaseModel):
     class Meta:
         verbose_name = "Video Hero"
         verbose_name_plural = "Video Heroes"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="video_hero_active"),
+        ]
 
     def __str__(self):
         return self.title

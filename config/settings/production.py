@@ -3,11 +3,20 @@ from corsheaders.defaults import default_headers
 from config.settings.common import *
 
 # Database
+_DB_CONN_OPTIONS = {
+    "CONN_MAX_AGE": 300,  # reuse DB connections for 5 minutes instead of reconnecting per request
+    "OPTIONS": {
+        "connect_timeout": 100,
+        "options": "-c statement_timeout=300000",  # 30 s hard query limit
+    },
+}
+
 if env.DATABASE_URI:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
             **env.env.db_url_config(env.DATABASE_URI),
+            **_DB_CONN_OPTIONS,
         }
     }
 else:
@@ -19,6 +28,7 @@ else:
             "PASSWORD": env.DB_PASSWORD,
             "HOST": env.DB_HOST,
             "PORT": env.DB_PORT,
+            **_DB_CONN_OPTIONS,
         }
     }
 

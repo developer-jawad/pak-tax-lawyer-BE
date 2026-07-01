@@ -35,6 +35,10 @@ class Video(BaseModel):
         verbose_name = "Video"
         verbose_name_plural = "Videos"
         ordering = ["-trending", "-new", "-created_at"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted", "-trending", "-new"], name="video_active_trending_idx"),
+            models.Index(fields=["category", "is_active", "is_deleted"], name="video_category_idx"),
+        ]
 
     def __str__(self):
         return self.title

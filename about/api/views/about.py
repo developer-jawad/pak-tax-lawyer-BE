@@ -1,6 +1,10 @@
+from django.core.cache import cache
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+
+ABOUT_CACHE_KEY = "api:about:page"
+ABOUT_CACHE_TTL = 60 * 15
 
 from about.api.serializers import (
     AboutAchievementSerializer,
@@ -30,6 +34,10 @@ class AboutViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
+        cached = cache.get(ABOUT_CACHE_KEY)
+        if cached is not None:
+            return Response(cached)
+
         hero = AboutHero.active_objects.first()
         hero_statistics = AboutStatistic.active_objects.all()
         who_we_are = WhoWeAre.active_objects.first()
@@ -39,31 +47,31 @@ class AboutViewSet(viewsets.ReadOnlyModelViewSet):
         achievements = AboutAchievement.active_objects.all()
         cta = AboutCTA.active_objects.first()
 
-        return Response(
-            {
-                "hero": {
-                    "hero": AboutHeroSerializer(hero).data if hero else None,
-                    "statistics": AboutStatisticSerializer(
-                        hero_statistics, many=True
-                    ).data,
-                },
-                "who_we_are": (
-                    WhoWeAreSerializer(who_we_are).data if who_we_are else None
-                ),
-                "statistics": {
-                    "section": (
-                        AboutStatisticSectionSerializer(statistic_section).data
-                        if statistic_section
-                        else None
-                    ),
-                    "items": AboutStatisticItemSerializer(
-                        statistic_items, many=True
-                    ).data,
-                },
-                "values": AboutValueSerializer(values, many=True).data,
-                "achievements": AboutAchievementSerializer(
-                    achievements, many=True
+        data = {
+            "hero": {
+                "hero": AboutHeroSerializer(hero).data if hero else None,
+                "statistics": AboutStatisticSerializer(
+                    hero_statistics, many=True
                 ).data,
-                "cta": AboutCTASerializer(cta).data if cta else None,
-            }
-        )
+            },
+            "who_we_are": (
+                WhoWeAreSerializer(who_we_are).data if who_we_are else None
+            ),
+            "statistics": {
+                "section": (
+                    AboutStatisticSectionSerializer(statistic_section).data
+                    if statistic_section
+                    else None
+                ),
+                "items": AboutStatisticItemSerializer(
+                    statistic_items, many=True
+                ).data,
+            },
+            "values": AboutValueSerializer(values, many=True).data,
+            "achievements": AboutAchievementSerializer(
+                achievements, many=True
+            ).data,
+            "cta": AboutCTASerializer(cta).data if cta else None,
+        }
+        cache.set(ABOUT_CACHE_KEY, data, ABOUT_CACHE_TTL)
+        return Response(data)

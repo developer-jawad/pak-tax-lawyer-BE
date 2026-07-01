@@ -18,6 +18,9 @@ class TeamCTA(BaseModel):
     class Meta:
         verbose_name = "Team CTA"
         verbose_name_plural = "Team CTAs"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="home_teamcta_active"),
+        ]
 
     def __str__(self):
         return self.title

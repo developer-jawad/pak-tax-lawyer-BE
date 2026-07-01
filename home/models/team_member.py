@@ -36,6 +36,9 @@ class TeamMember(BaseModel):
         verbose_name = "Team Member"
         verbose_name_plural = "Team Members"
         ordering = ["-featured", "name"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="home_teammember_active"),
+        ]
 
     def __str__(self):
         return f"{self.name} - {self.position}"

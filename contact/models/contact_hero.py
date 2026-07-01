@@ -19,6 +19,9 @@ class ContactHero(BaseModel):
     class Meta:
         verbose_name = "Contact Hero"
         verbose_name_plural = "Contact Heroes"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="contact_hero_active"),
+        ]
 
     def __str__(self):
         return self.title

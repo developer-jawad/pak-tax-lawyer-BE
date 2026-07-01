@@ -46,6 +46,9 @@ class Service(BaseModel):
         verbose_name = "Service"
         verbose_name_plural = "Services"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="service_service_active"),
+        ]
 
     def __str__(self):
         return self.title

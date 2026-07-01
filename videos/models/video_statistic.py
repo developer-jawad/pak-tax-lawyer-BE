@@ -20,6 +20,9 @@ class VideoStatistic(BaseModel):
         verbose_name = "Video Statistic"
         verbose_name_plural = "Video Statistics"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="video_stat_active"),
+        ]
 
     def __str__(self):
         return f"{self.number} - {self.label}"

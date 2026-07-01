@@ -15,6 +15,9 @@ class FooterQuickLink(BaseModel):
         verbose_name = "Footer Quick Link"
         verbose_name_plural = "Footer Quick Links"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="footer_quicklink_active"),
+        ]
 
     def __str__(self):
         return self.label

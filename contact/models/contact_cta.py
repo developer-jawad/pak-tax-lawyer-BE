@@ -15,6 +15,9 @@ class ContactCTA(BaseModel):
     class Meta:
         verbose_name = "Contact CTA"
         verbose_name_plural = "Contact CTAs"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="contact_cta_active"),
+        ]
 
     def __str__(self):
         return self.title

@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -39,11 +40,18 @@ from videos.api.serializers import (
 )
 from videos.models import Video, VideoCTA, VideoSection
 
+HOME_CACHE_KEY = "api:home:sections"
+HOME_CACHE_TTL = 60 * 15  # 15 minutes
+
 
 class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
+        cached = cache.get(HOME_CACHE_KEY)
+        if cached is not None:
+            return Response(cached)
+
         # Hero Section
         hero_section = HeroSection.objects.filter(
             is_active=True, is_deleted=False
@@ -76,61 +84,61 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
         videos = Video.active_objects.all()[:6]
         video_cta = VideoCTA.active_objects.first()
 
-        return Response(
-            {
-                "hero_section": (
-                    HeroSectionSerializer(hero_section).data if hero_section else None
+        data = {
+            "hero_section": (
+                HeroSectionSerializer(hero_section).data if hero_section else None
+            ),
+            "service_section": {
+                "section": (
+                    ServiceSectionSerializer(service_section).data
+                    if service_section
+                    else None
                 ),
-                "service_section": {
-                    "section": (
-                        ServiceSectionSerializer(service_section).data
-                        if service_section
-                        else None
-                    ),
-                    "services": ServiceSerializer(services, many=True).data,
-                    "cta": (
-                        ServiceCTASerializer(service_cta).data if service_cta else None
-                    ),
-                },
-                "team_section": {
-                    "section": (
-                        TeamSectionSerializer(team_section).data
-                        if team_section
-                        else None
-                    ),
-                    "team_members": TeamMemberSerializer(team_members, many=True).data,
-                    "cta": TeamCTASerializer(team_cta).data if team_cta else None,
-                },
-                "testimonial_section": {
-                    "section": (
-                        TestimonialSectionSerializer(testimonial_section).data
-                        if testimonial_section
-                        else None
-                    ),
-                    "testimonials": TestimonialSerializer(testimonials, many=True).data,
-                    "cta": (
-                        TestimonialCTASerializer(testimonial_cta).data
-                        if testimonial_cta
-                        else None
-                    ),
-                },
-                "blog_section": {
-                    "section": (
-                        BlogSectionSerializer(blog_section).data
-                        if blog_section
-                        else None
-                    ),
-                    "blog_posts": BlogPostSerializer(blog_posts, many=True).data,
-                    "cta": BlogCTASerializer(blog_cta).data if blog_cta else None,
-                },
-                "video_section": {
-                    "section": (
-                        VideoSectionSerializer(video_section).data
-                        if video_section
-                        else None
-                    ),
-                    "videos": VideoSerializer(videos, many=True).data,
-                    "cta": VideoCTASerializer(video_cta).data if video_cta else None,
-                },
-            }
-        )
+                "services": ServiceSerializer(services, many=True).data,
+                "cta": (
+                    ServiceCTASerializer(service_cta).data if service_cta else None
+                ),
+            },
+            "team_section": {
+                "section": (
+                    TeamSectionSerializer(team_section).data
+                    if team_section
+                    else None
+                ),
+                "team_members": TeamMemberSerializer(team_members, many=True).data,
+                "cta": TeamCTASerializer(team_cta).data if team_cta else None,
+            },
+            "testimonial_section": {
+                "section": (
+                    TestimonialSectionSerializer(testimonial_section).data
+                    if testimonial_section
+                    else None
+                ),
+                "testimonials": TestimonialSerializer(testimonials, many=True).data,
+                "cta": (
+                    TestimonialCTASerializer(testimonial_cta).data
+                    if testimonial_cta
+                    else None
+                ),
+            },
+            "blog_section": {
+                "section": (
+                    BlogSectionSerializer(blog_section).data
+                    if blog_section
+                    else None
+                ),
+                "blog_posts": BlogPostSerializer(blog_posts, many=True).data,
+                "cta": BlogCTASerializer(blog_cta).data if blog_cta else None,
+            },
+            "video_section": {
+                "section": (
+                    VideoSectionSerializer(video_section).data
+                    if video_section
+                    else None
+                ),
+                "videos": VideoSerializer(videos, many=True).data,
+                "cta": VideoCTASerializer(video_cta).data if video_cta else None,
+            },
+        }
+        cache.set(HOME_CACHE_KEY, data, HOME_CACHE_TTL)
+        return Response(data)

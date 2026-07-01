@@ -25,6 +25,9 @@ class WhoWeAre(BaseModel):
     class Meta:
         verbose_name = "Who We Are"
         verbose_name_plural = "Who We Are"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="about_whoweare_active"),
+        ]
 
     def __str__(self):
         return self.title

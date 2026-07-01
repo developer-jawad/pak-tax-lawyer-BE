@@ -18,6 +18,9 @@ class AboutCTA(BaseModel):
     class Meta:
         verbose_name = "About CTA"
         verbose_name_plural = "About CTAs"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="about_cta_active"),
+        ]
 
     def __str__(self):
         return self.title

@@ -19,6 +19,9 @@ class TestimonialSection(BaseModel):
     class Meta:
         verbose_name = "Testimonial Section"
         verbose_name_plural = "Testimonial Sections"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="home_testimsect_active"),
+        ]
 
     def __str__(self):
         return self.title

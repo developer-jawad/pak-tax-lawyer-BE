@@ -25,6 +25,9 @@ class AboutStatisticItem(BaseModel):
         verbose_name = "About Statistic Item"
         verbose_name_plural = "About Statistic Items"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="about_statitem_active"),
+        ]
 
     def __str__(self):
         return f"{self.value} - {self.label}"

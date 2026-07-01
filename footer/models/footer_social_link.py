@@ -17,6 +17,9 @@ class FooterSocialLink(BaseModel):
         verbose_name = "Footer Social Link"
         verbose_name_plural = "Footer Social Links"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="footer_sociallink_active"),
+        ]
 
     def __str__(self):
         return f"{self.platform}"

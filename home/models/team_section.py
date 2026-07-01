@@ -22,6 +22,9 @@ class TeamSection(BaseModel):
     class Meta:
         verbose_name = "Team Section"
         verbose_name_plural = "Team Sections"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="home_teamsect_active"),
+        ]
 
     def __str__(self):
         return self.title

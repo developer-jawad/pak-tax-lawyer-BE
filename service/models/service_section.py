@@ -19,6 +19,9 @@ class ServiceSection(BaseModel):
     class Meta:
         verbose_name = "Service Section"
         verbose_name_plural = "Service Sections"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="service_sect_active"),
+        ]
 
     def __str__(self):
         return self.title

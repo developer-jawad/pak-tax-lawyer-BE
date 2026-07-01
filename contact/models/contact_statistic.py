@@ -23,6 +23,9 @@ class ContactStatistic(BaseModel):
         verbose_name = "Contact Statistic"
         verbose_name_plural = "Contact Statistics"
         ordering = ["id"]
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="contact_stat_active"),
+        ]
 
     def __str__(self):
         return f"{self.value} - {self.label}"

@@ -16,6 +16,9 @@ class ServiceHero(BaseModel):
     class Meta:
         verbose_name = "Service Hero"
         verbose_name_plural = "Service Heroes"
+        indexes = [
+            models.Index(fields=["is_active", "is_deleted"], name="service_hero_active"),
+        ]
 
     def __str__(self):
         return self.title
