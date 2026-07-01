@@ -242,10 +242,10 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
         "LOCATION": "django_cache",
-        "TIMEOUT": 60 * 15,  # 15 minutes default
+        "TIMEOUT": 60 * 60,  # 1 hour default
         "OPTIONS": {
-            "MAX_ENTRIES": 1000,
-            "CULL_FREQUENCY": 3,  # delete 1/3 of entries when MAX_ENTRIES is reached
+            "MAX_ENTRIES": 300,   # small table — keeps COUNT(*) cheap on Nano
+            "CULL_FREQUENCY": 4,  # delete 1/4 when MAX_ENTRIES hit
         },
     }
 }

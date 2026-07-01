@@ -12,7 +12,7 @@ from blog.api.serializers import (
 from blog.models import BlogCTA, BlogHero, BlogPost, BlogStatistic
 
 BLOG_PAGE_CACHE_KEY = "api:blog:page"
-BLOG_PAGE_CACHE_TTL = 60 * 15
+BLOG_PAGE_CACHE_TTL = 60 * 60
 
 
 class BlogViewSet(viewsets.ReadOnlyModelViewSet):
@@ -21,7 +21,10 @@ class BlogViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
-        cached = cache.get(BLOG_PAGE_CACHE_KEY)
+        try:
+            cached = cache.get(BLOG_PAGE_CACHE_KEY)
+        except Exception:
+            cached = None
         if cached is not None:
             return Response(cached)
 
@@ -36,5 +39,8 @@ class BlogViewSet(viewsets.ReadOnlyModelViewSet):
             "cta": BlogCTASerializer(cta).data if cta else None,
             "statistics": BlogStatisticSerializer(statistics, many=True).data,
         }
-        cache.set(BLOG_PAGE_CACHE_KEY, data, BLOG_PAGE_CACHE_TTL)
+        try:
+            cache.set(BLOG_PAGE_CACHE_KEY, data, BLOG_PAGE_CACHE_TTL)
+        except Exception:
+            pass
         return Response(data)

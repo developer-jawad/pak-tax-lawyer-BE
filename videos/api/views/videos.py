@@ -12,7 +12,7 @@ from videos.api.serializers import (
 from videos.models import Video, VideoCTA, VideoHero, VideoStatistic
 
 VIDEOS_CACHE_KEY = "api:videos:page"
-VIDEOS_CACHE_TTL = 60 * 15
+VIDEOS_CACHE_TTL = 60 * 60
 
 
 class VideosViewSet(viewsets.ReadOnlyModelViewSet):
@@ -21,7 +21,10 @@ class VideosViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
-        cached = cache.get(VIDEOS_CACHE_KEY)
+        try:
+            cached = cache.get(VIDEOS_CACHE_KEY)
+        except Exception:
+            cached = None
         if cached is not None:
             return Response(cached)
 
@@ -40,5 +43,8 @@ class VideosViewSet(viewsets.ReadOnlyModelViewSet):
             "videos": VideoSerializer(videos, many=True).data,
             "cta": VideoCTASerializer(cta).data if cta else None,
         }
-        cache.set(VIDEOS_CACHE_KEY, data, VIDEOS_CACHE_TTL)
+        try:
+            cache.set(VIDEOS_CACHE_KEY, data, VIDEOS_CACHE_TTL)
+        except Exception:
+            pass
         return Response(data)

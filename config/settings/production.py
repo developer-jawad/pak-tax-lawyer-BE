@@ -2,12 +2,14 @@ from corsheaders.defaults import default_headers
 
 from config.settings.common import *
 
-# Database
+# Database — tuned for Supabase Nano (0.5 GB RAM, shared CPU, ~25 connection limit).
+# Vercel is serverless: CONN_MAX_AGE=0 so each invocation releases its connection
+# immediately after the response, preventing connection exhaustion on Nano.
 _DB_CONN_OPTIONS = {
-    "CONN_MAX_AGE": 300,  # reuse DB connections for 5 minutes instead of reconnecting per request
+    "CONN_MAX_AGE": 0,
     "OPTIONS": {
-        "connect_timeout": 100,
-        "options": "-c statement_timeout=300000",  # 30 s hard query limit
+        "connect_timeout": 5,
+        "options": "-c statement_timeout=10000",  # 10 s hard limit — protect shared CPU
     },
 }
 

@@ -4,7 +4,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 FOOTER_CACHE_KEY = "api:footer:page"
-FOOTER_CACHE_TTL = 60 * 30  # footer changes very rarely, 30 min
+FOOTER_CACHE_TTL = 60 * 120  # footer rarely changes — 2 hours
 
 from footer.api.serializers import (
     FooterBottomSectionSerializer,
@@ -32,7 +32,11 @@ class FooterViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
-        cached = cache.get(FOOTER_CACHE_KEY)
+        try:
+            cached = cache.get(FOOTER_CACHE_KEY)
+        except Exception:
+            cached = None
+
         if cached is not None:
             return Response(cached)
 
@@ -65,5 +69,8 @@ class FooterViewSet(viewsets.ReadOnlyModelViewSet):
                 "legal_links": FooterLegalLinkSerializer(legal_links, many=True).data,
             },
         }
-        cache.set(FOOTER_CACHE_KEY, data, FOOTER_CACHE_TTL)
+        try:
+            cache.set(FOOTER_CACHE_KEY, data, FOOTER_CACHE_TTL)
+        except Exception:
+            pass
         return Response(data)

@@ -41,14 +41,17 @@ from videos.api.serializers import (
 from videos.models import Video, VideoCTA, VideoSection
 
 HOME_CACHE_KEY = "api:home:sections"
-HOME_CACHE_TTL = 60 * 15  # 15 minutes
+HOME_CACHE_TTL = 60 * 60  # 15 minutes
 
 
 class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
-        cached = cache.get(HOME_CACHE_KEY)
+        try:
+            cached = cache.get(HOME_CACHE_KEY)
+        except Exception:
+            cached = None
         if cached is not None:
             return Response(cached)
 
@@ -140,5 +143,8 @@ class HomeSectionsViewSet(viewsets.ReadOnlyModelViewSet):
                 "cta": VideoCTASerializer(video_cta).data if video_cta else None,
             },
         }
-        cache.set(HOME_CACHE_KEY, data, HOME_CACHE_TTL)
+        try:
+            cache.set(HOME_CACHE_KEY, data, HOME_CACHE_TTL)
+        except Exception:
+            pass
         return Response(data)

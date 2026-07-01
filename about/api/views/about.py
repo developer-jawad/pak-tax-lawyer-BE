@@ -4,7 +4,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 ABOUT_CACHE_KEY = "api:about:page"
-ABOUT_CACHE_TTL = 60 * 15
+ABOUT_CACHE_TTL = 60 * 60
 
 from about.api.serializers import (
     AboutAchievementSerializer,
@@ -34,7 +34,10 @@ class AboutViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
-        cached = cache.get(ABOUT_CACHE_KEY)
+        try:
+            cached = cache.get(ABOUT_CACHE_KEY)
+        except Exception:
+            cached = None
         if cached is not None:
             return Response(cached)
 
@@ -73,5 +76,8 @@ class AboutViewSet(viewsets.ReadOnlyModelViewSet):
             ).data,
             "cta": AboutCTASerializer(cta).data if cta else None,
         }
-        cache.set(ABOUT_CACHE_KEY, data, ABOUT_CACHE_TTL)
+        try:
+            cache.set(ABOUT_CACHE_KEY, data, ABOUT_CACHE_TTL)
+        except Exception:
+            pass
         return Response(data)

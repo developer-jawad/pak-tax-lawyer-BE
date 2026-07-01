@@ -12,8 +12,14 @@ def make_cache_key(prefix: str, *parts) -> str:
 
 
 def get_or_set(key: str, callable, timeout: int = DEFAULT_TTL):
-    value = cache.get(key)
+    try:
+        value = cache.get(key)
+    except Exception:
+        value = None
     if value is None:
         value = callable()
-        cache.set(key, value, timeout)
+        try:
+            cache.set(key, value, timeout)
+        except Exception:
+            pass
     return value

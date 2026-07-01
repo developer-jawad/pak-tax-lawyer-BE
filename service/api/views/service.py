@@ -19,7 +19,7 @@ from service.models import (
 )
 
 SERVICE_CACHE_KEY = "api:service:list"
-SERVICE_CACHE_TTL = 60 * 15
+SERVICE_CACHE_TTL = 60 * 60
 
 
 class ServiceViewSet(viewsets.ReadOnlyModelViewSet):
@@ -28,7 +28,10 @@ class ServiceViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request, *args, **kwargs):
-        cached = cache.get(SERVICE_CACHE_KEY)
+        try:
+            cached = cache.get(SERVICE_CACHE_KEY)
+        except Exception:
+            cached = None
         if cached is not None:
             return Response(cached)
 
@@ -47,5 +50,8 @@ class ServiceViewSet(viewsets.ReadOnlyModelViewSet):
             "cta": ServiceCTASerializer(cta).data if cta else None,
             "statistics": ServiceStatisticSerializer(statistics, many=True).data,
         }
-        cache.set(SERVICE_CACHE_KEY, data, SERVICE_CACHE_TTL)
+        try:
+            cache.set(SERVICE_CACHE_KEY, data, SERVICE_CACHE_TTL)
+        except Exception:
+            pass
         return Response(data)
